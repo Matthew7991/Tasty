@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
 import Onboarding from "./components/pages/Onboarding/Onboarding"
 import SpashScreen from "./components/pages/SpashScreen/SplashScreen"
+import Details from "./components/pages/Details/Details"
+
 
 function App() {
   return (
@@ -34,7 +36,7 @@ function App() {
           />
           <Route
             path="/details/:mealID"
-            element={<h1>details</h1>}
+            element={<Details />}
           />
         </Routes>
       </BrowserRouter>
