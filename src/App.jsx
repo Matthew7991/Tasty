@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
+import Onboarding from "./components/pages/Onboarding/Onboarding"
+import SpashScreen from "./components/pages/SpashScreen/SplashScreen"
 
 function App() {
   return (
@@ -8,7 +10,11 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<h1>onboarding</h1>}
+            element={<SpashScreen />}
+          />
+          <Route 
+          path="/onboarding" 
+          element={<Onboarding />}
           />
           <Route
             path="/home"
