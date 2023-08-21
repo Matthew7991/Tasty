@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-// http://localhost:5173/details/52772
 
 function Details() {
   const [meal, setMeal] = useState({})
@@ -8,12 +7,13 @@ function Details() {
 
   const mealId = useParams().mealID
 
-  const handleToggleDisplay = () => {
-    setShowInstructions(!showInstructions)
+  let apiLink = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`
+  if (mealId === "random") {
+    apiLink = "https://www.themealdb.com/api/json/v1/1/random.php"
   }
 
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+    fetch(apiLink)
       .then((response) => {
         if (!response.ok) {
           throw new Error("fetching failed")
@@ -47,8 +47,17 @@ function Details() {
           <p>{meal.strCategory}</p>
           <p>{meal.strArea}</p>
           <div>
-            <button onClick={handleToggleDisplay}>Ingredients</button>
-            <button onClick={handleToggleDisplay}>Instructions</button>
+            {/* Die btn-active Klasse wird hinzugefügt wenn dies die active Seite ist */}
+            <button
+              onClick={() => setShowInstructions(false)}
+              className={showInstructions || "btn-active"}>
+              Ingredients
+            </button>
+            <button
+              onClick={() => setShowInstructions(true)}
+              className={showInstructions && "btn-active"}>
+              Instructions
+            </button>
           </div>
           {showInstructions || (
             <div>
