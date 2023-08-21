@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
+import Areas from "./components/pages/Areas/Areas"
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           />
           <Route
             path="/area/:area"
-            element={<h1>search</h1>}
+            element={<Areas/>}
           />
           <Route
             path="/categories/:category"

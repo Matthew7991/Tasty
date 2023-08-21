@@ -1,0 +1,37 @@
+.filter-box{
+  height: 60px;
+  overflow: hidden;
+  transition: height 200ms ease-in-out;
+
+  button{
+    all: unset;
+    margin-left: auto;
+    display: block;
+    color: #70B9BE;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.filter-list{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+
+  li{
+    background-color: #F1F5F5;
+    padding-inline: 22px;
+    line-height: 40px;
+    border-radius: 20px;
+    color: #0A2533;
+  }
+}
+
+.see-all{
+  height: 510px;
+}
+
