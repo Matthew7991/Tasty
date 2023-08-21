@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Onboarding.css"
+import "./onboarding.css"
 import OnboardingImg from "../../../assets/Images/onboard.svg"
 
 const Onboarding = () => {
@@ -9,7 +9,7 @@ const Onboarding = () => {
     <div className="onboarding-content">
     <h1 className="onboarding-title">All recipes you needed</h1>
     <p className="onboarding-description">5000+ healthy recipes made by people for your healthy life</p>
-    <button to="/home" className="get-started-button">Get Started</button>
+    <Link to="/home" className="get-started-button">Get Started</Link>
     </div>
     </div>
    );

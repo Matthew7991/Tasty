@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
 import Onboarding from "./components/pages/Onboarding/Onboarding"
-import SpashScreen from "./components/pages/SpashScreen/SplashScreen"
+import SplashScreen from "./components/pages/SpashScreen/SplashScreen"
 import Details from "./components/pages/Details/Details"
+import Home from "./components/pages/Home/Home"
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<SpashScreen />}
+            element={<SplashScreen />}
           />
           <Route 
           path="/onboarding" 
@@ -20,11 +21,7 @@ function App() {
           />
           <Route
             path="/home"
-            element={<h1>home</h1>}
-          />
-          <Route
-            path="/search/:searchTerm"
-            element={<h1>search</h1>}
+            element={<Home />}
           />
           <Route
             path="/area/:area"
