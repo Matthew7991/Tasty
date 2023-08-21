@@ -1,6 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
+
 import Areas from "./components/pages/Areas/Areas"
+import Onboarding from "./components/pages/Onboarding/Onboarding"
+import SpashScreen from "./components/pages/SpashScreen/SplashScreen"
+import Details from "./components/pages/Details/Details"
+
 
 function App() {
   return (
@@ -9,7 +14,11 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<h1>onboarding</h1>}
+            element={<SpashScreen />}
+          />
+          <Route 
+          path="/onboarding" 
+          element={<Onboarding />}
           />
           <Route
             path="/home"
@@ -29,7 +38,7 @@ function App() {
           />
           <Route
             path="/details/:mealID"
-            element={<h1>details</h1>}
+            element={<Details />}
           />
         </Routes>
       </BrowserRouter>
