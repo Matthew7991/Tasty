@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
+
+import Areas from "./components/pages/Areas/Areas"
 import Onboarding from "./components/pages/Onboarding/Onboarding"
 import SpashScreen from "./components/pages/SpashScreen/SplashScreen"
 import Details from "./components/pages/Details/Details"
@@ -28,7 +30,7 @@ function App() {
           />
           <Route
             path="/area/:area"
-            element={<h1>search</h1>}
+            element={<Areas/>}
           />
           <Route
             path="/categories/:category"
