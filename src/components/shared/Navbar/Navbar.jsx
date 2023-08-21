@@ -14,7 +14,7 @@ const Navbar = () => {
       <NavLink exact to="/" activeClassName="active"><img src={Heart} alt="Heart" /></NavLink>
       <NavLink exact to="/" activeClassName="active"><img src={Profile} alt="Profile" /></NavLink>
     </div>
-   );
+  )
 }
- 
-export default Navbar;
+
+export default Navbar
