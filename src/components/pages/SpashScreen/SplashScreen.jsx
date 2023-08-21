@@ -4,7 +4,7 @@ import "./SplashScreen.css"
 
 const SpashScreen = () => {
   return ( 
-    <Link to="/Onboarding" className="splash-screen-link">
+    <Link to="/onboarding" className="splash-screen-link">
     <div className="splash-screen">
     <img src={Logo} alt="Logo" className="logo" />
     <h1 className="app-title">Tasty</h1>
