@@ -50,15 +50,14 @@ function Details() {
             <p className="area">{meal.strArea}</p>
           </div>
           <div className="navigation">
-            {/* Die btn-active Klasse wird hinzugefügt wenn dies die active Seite ist */}
             <button
               onClick={() => setShowInstructions(false)}
-              className={showInstructions || "btn-active"}>
+              className={showInstructions ? "" : "btn-active"}>
               Ingredients
             </button>
             <button
               onClick={() => setShowInstructions(true)}
-              className={showInstructions && "btn-active"}>
+              className={showInstructions ? "btn-active" : ""}>
               Instructions
             </button>
           </div>
