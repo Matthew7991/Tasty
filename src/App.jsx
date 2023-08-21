@@ -6,7 +6,6 @@ import Onboarding from "./components/pages/Onboarding/Onboarding"
 import SpashScreen from "./components/pages/SpashScreen/SplashScreen"
 import Details from "./components/pages/Details/Details"
 
-
 function App() {
   return (
     <>
@@ -16,9 +15,9 @@ function App() {
             path="/"
             element={<SpashScreen />}
           />
-          <Route 
-          path="/onboarding" 
-          element={<Onboarding />}
+          <Route
+            path="/onboarding"
+            element={<Onboarding />}
           />
           <Route
             path="/home"
@@ -29,11 +28,11 @@ function App() {
             element={<h1>search</h1>}
           />
           <Route
-            path="/area/:area"
-            element={<Areas/>}
+            path="/area"
+            element={<Areas />}
           />
           <Route
-            path="/categories/:category"
+            path="/categories"
             element={<h1>search</h1>}
           />
           <Route
