@@ -1,18 +1,22 @@
+.search-bar {
+  margin-top: 44px;
+  margin-bottom: 10px;
+}
 
-
-.search-bar-title{
+.search-bar-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 25px;
-  padding-block: 24px;
-  padding-inline: 24px;
+  padding-block: 16px;
+
+  h1 {
+    font-size: 1.5rem;
+  }
 }
 
-.back-button{
+.back-button {
   border: none;
   background: none;
-  padding: 0;
+  padding: 4px;
   cursor: pointer;
-
 }
