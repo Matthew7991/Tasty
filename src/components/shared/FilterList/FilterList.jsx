@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import "./FilterList.scss";
 import { useLocation } from "react-router-dom";
@@ -8,8 +9,8 @@ function FilterList({ title, api, onHandleFoodList, filterTitle }) {
   const location = useLocation().pathname;
 
   const handelSeeAll = () => {
-    setSeeAll((prev) => (prev = !prev));
-  };
+    setSeeAll((prev) => (prev = !prev))
+  }
 
   useEffect(() => {
     fetch(api)
@@ -24,6 +25,7 @@ function FilterList({ title, api, onHandleFoodList, filterTitle }) {
         );
       });
   }, []);
+
 
   return (
     <div className={seeAll ? `filter-box ${location === "/home" && title === "strCategory" && 'filter-box-home'} see-all` : `filter-box ${location === "/home" && title === "strCategory" && 'filter-box-home'}`}>
@@ -42,12 +44,13 @@ function FilterList({ title, api, onHandleFoodList, filterTitle }) {
             {location === "/home" && title === "strCategory" && (
               <img src={dataItem.strCategoryThumb} />
             )}
+
             {dataItem[title]}
           </li>
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
-export default FilterList;
+export default FilterList
