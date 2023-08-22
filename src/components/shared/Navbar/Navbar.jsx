@@ -9,10 +9,10 @@ import "./Navbar.css";
 const Navbar = () => {
   return ( 
     <div className="navbar">
-      <NavLink to="/home" activeClassName="active"><img src={Home} alt="Home" /></NavLink>
-      <NavLink to="/area/area-name" activeClassName="active"><img src={Search} alt="Search" /></NavLink>
-      <NavLink exact to="/" activeClassName="active"><img src={Heart} alt="Heart" /></NavLink>
-      <NavLink exact to="/" activeClassName="active"><img src={Profile} alt="Profile" /></NavLink>
+      <NavLink to="/home"><img src={Home} alt="Home" /></NavLink>
+      <NavLink to="/areas"><img src={Search} alt="Search" /></NavLink>
+      <NavLink to="/"><img src={Heart} alt="Heart" /></NavLink>
+      <NavLink to="/"><img src={Profile} alt="Profile" /></NavLink>
     </div>
   )
 }
