@@ -3,6 +3,8 @@ import SearchBar from '../../shared/SearchBar/SearchBar'
 import FilterList from '../../shared/FilterList/FilterList'
 import FoodList from '../../shared/foodList/FoodList'
 import { categorieFilterApi } from '../../../utilities/categorieFilterApi'
+import Navbar from "../../shared/Navbar/Navbar"
+
 
 function Categories() {
   const [categorie, setCategorie] = useState('beef');
@@ -19,10 +21,13 @@ function Categories() {
   }, [categorie]);
 
   return (
+    <div>
     <div className='areas'>
       <SearchBar/>
       <FilterList title = 'strCategory' api = {categorieFilterApi} onHandleFoodList = {handleFoodList}/>
       <FoodList foodList={foodList} />
+    </div>
+    <Navbar/>
     </div>
   )
 }

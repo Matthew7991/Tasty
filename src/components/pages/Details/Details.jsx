@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import "./Details.scss"
+import Navbar from "../../shared/Navbar/Navbar"
 
 function Details() {
   const [meal, setMeal] = useState({})
@@ -139,6 +140,7 @@ function Details() {
           )}
         </div>
       </article>
+      <Navbar/>
     </main>
   )
 }
