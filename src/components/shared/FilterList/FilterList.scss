@@ -1,19 +1,28 @@
 .filter-box{
-  height: 65px;
+  height: 70px;
   margin-top: 18px;
   overflow: hidden;
   transition: all 200ms ease-in-out;
+  padding-inline: 24px;
 
-  button{
-    all: unset;
-    margin-left: auto;
-    display: block;
-    color: #70B9BE;
+  div{
+    display: flex;
     margin-bottom: 4px;
-    font-weight: 700;
 
-    &:hover{
-      text-decoration: underline;
+    h1{
+      font-size: 20px;
+    }
+  
+    button{
+      all: unset;
+      margin-left: auto;
+      display: block;
+      color: #70B9BE;
+      font-weight: 700;
+  
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -24,6 +33,7 @@
   flex-wrap: wrap;
   gap: 10px;
   padding-left: 5px;
+  padding: 2px;
 
   li{
     background-color: #F1F5F5;
@@ -40,7 +50,26 @@
   }
 }
 
+.filter-box-home{
+  height: 170px;
+  
+  ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    
+    li{
+      font-weight: 700;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 2px;
+
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+}
+
 .see-all{
   height: fit-content;
 }
-
