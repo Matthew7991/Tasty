@@ -18,7 +18,7 @@ const Navbar = () => {
         />
       </NavLink>
       <NavLink
-        to="/area/area-name"
+        to="/areas"
         activeClassName="active">
         <img
           src={Search}
@@ -26,7 +26,6 @@ const Navbar = () => {
         />
       </NavLink>
       <NavLink
-        exact
         to="/"
         activeClassName="active">
         <img
@@ -35,7 +34,6 @@ const Navbar = () => {
         />
       </NavLink>
       <NavLink
-        exact
         to="/"
         activeClassName="active">
         <img
