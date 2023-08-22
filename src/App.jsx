@@ -5,6 +5,7 @@ import Areas from "./components/pages/Areas/Areas"
 import Onboarding from "./components/pages/Onboarding/Onboarding"
 import SpashScreen from "./components/pages/SpashScreen/SplashScreen"
 import Details from "./components/pages/Details/Details"
+import Categories from "./components/pages/Categories/Categories"
 
 function App() {
   return (
@@ -28,12 +29,12 @@ function App() {
             element={<h1>search</h1>}
           />
           <Route
-            path="/area"
+            path="/areas"
             element={<Areas />}
           />
           <Route
             path="/categories"
-            element={<h1>search</h1>}
+            element={<Categories/>}
           />
           <Route
             path="/details/:mealID"

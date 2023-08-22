@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./FilterList.scss";
 
-function FilterList({ dataList, onHandleFoodList }) {
+function FilterList({title, api, onHandleFoodList}) {
+  const [filterList, setFilterList] = useState([]);
   const [seeAll, setSeeAll] = useState(false);
   
-
   const handelSeeAll = () => {
     setSeeAll((prev) => (prev = !prev));
   };
+
+  useEffect(() => {
+    fetch(api)
+      .then((res) => res.json())
+      .then((data) => setFilterList(data.meals));
+  }, []);
+
   return (
     <div className={seeAll ? "filter-box see-all" : "filter-box"}>
       <button onClick={handelSeeAll}>{seeAll ? "close" : "See All"}</button>
       <ul className="filter-list">
-        {dataList.map((dataItem) => (
-          <li key={dataItem.strArea} data-value={dataItem.strArea.toLowerCase()} className="filter-item" onClick={onHandleFoodList} >
-            {dataItem.strArea}
+        {filterList.map((dataItem) => (
+          <li key={dataItem[title]} data-value={dataItem[title].toLowerCase()} onClick={onHandleFoodList} className="filter-item" >
+            {dataItem[title]}
           </li>
         ))}
       </ul>

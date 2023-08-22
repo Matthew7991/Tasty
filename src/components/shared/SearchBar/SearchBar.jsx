@@ -13,6 +13,7 @@ function SearchBar() {
           <FontAwesomeIcon icon={faArrowLeft} />
         </Link>
         <h1>Search</h1>
+        <div></div>
       </div>
       <SearchInput />
     </div>
