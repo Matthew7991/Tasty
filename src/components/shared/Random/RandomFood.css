@@ -1,0 +1,58 @@
+
+.random-food{
+  padding-inline: 24px;
+}
+
+.random-food-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #0A2533;
+}
+
+.random-food-link {
+  text-decoration: none;
+  background-color: #70B9BE; 
+  color: #fff; 
+  display: block;
+  padding: 10px;
+  padding-left: 20px;
+  padding-top: 50px; 
+  padding-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px; 
+  transition: background-color 0.3s ease; 
+  position: relative;
+}
+.random-food-name{
+  margin-bottom: 10px;
+}
+
+.random-food-link:hover {
+  background-color: #f5f5f5; 
+}
+
+.random-food-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.random-food-category,
+.random-food-area {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+  padding-right: 20px;
+}
+.random-food-img-wraper{
+  display: flex;
+}
+.random-food-img {
+  height: 70%;
+  width: auto;
+  position:absolute;
+  right: 0;
+  top: 0;
+
+  
+}
