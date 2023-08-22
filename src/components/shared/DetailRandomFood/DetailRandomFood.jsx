@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import FoodImg from "../../../assets/Images/Frame.svg"
 
 function DetailRandomFood({localId}) {
   const [dayFood, setDayFood] = useState([]);
@@ -13,13 +14,14 @@ function DetailRandomFood({localId}) {
   }, [])
 
   return (
-    <Link to={`/details/${dayFood.idMeal}`}>
-      <div>
-        <h1>{dayFood.strMeal}</h1>
-        <div>
-          <p>{dayFood.strCategory}</p>
-          <p>{dayFood.strArea}</p>
-        </div>
+    <Link to={`/details/${dayFood.idMeal}`} className='random-food-link'>
+      <div className='random-food-img-wraper'>
+        <img src={FoodImg} alt="Random Food Image" className="random-food-img"/>
+      </div>
+      <h2 className="random-food-name">{dayFood.strMeal}</h2>
+      <div className="random-food-details">
+        <p className="random-food-category">{dayFood.strCategory}</p>
+        <p className="random-food-area">{dayFood.strArea}</p>
       </div>
     </Link>
   )
