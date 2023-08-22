@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { randomApi } from '../../../utilities/randomApi'
 import { Link } from 'react-router-dom';
+import "./RandomFood.css"
+import FoodImg from "../../../assets/Images/Frame.svg"
 
 function RandomFood() {
   const [random, setRandom] = useState([]);
@@ -12,18 +14,19 @@ function RandomFood() {
   }, [])
 
   return (
-    <div>
-      <h1>Meal of the Day</h1>
-      <Link to={`/details/${random.idMeal}`}>
-        <div>
-          <h1>{random.strMeal}</h1>
-          <div>
-            <p>{random.strCategory}</p>
-            <p>{random.strArea}</p>
-          </div>
+    <div className='random-food'>
+      <h1 className='random-food-title'>Meal of the Day</h1>
+      <Link to={`/details/${random.idMeal}`} className='random-food-link'>
+        <div className='random-food-img-wraper'>
+        <img src={FoodImg} alt="Random Food Image" className="random-food-img"/>
         </div>
-      </Link>
-    </div>
+        <h2 className="random-food-name">{random.strMeal}</h2>
+          <div className="random-food-details">
+            <p className="random-food-category">{random.strCategory}</p>
+            <p className="random-food-area">{random.strArea}</p>
+          </div>
+          </Link>
+        </div>
   )
 }
 
