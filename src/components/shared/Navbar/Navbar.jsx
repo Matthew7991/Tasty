@@ -58,7 +58,7 @@ const Navbar = () => {
           </g>
         </svg>
       </NavLink>
-      <NavLink to="/">
+      <NavLink to="/favorites">
         <svg
           width="21"
           height="20"
@@ -78,6 +78,7 @@ const Navbar = () => {
             <path
               id="Stroke 3"
               d="M14.5 4.7002C15.57 5.0462 16.326 6.0012 16.417 7.1222"
+              stroke="#C6E3E5"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -85,7 +86,7 @@ const Navbar = () => {
           </g>
         </svg>
       </NavLink>
-      <NavLink to="/">
+      <NavLink to="/login">
         <svg
           width="17"
           height="20"
@@ -119,4 +120,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+export default Navbar
