@@ -1,43 +1,42 @@
-import React, { useState } from "react"
-import Navbar from "../../shared/Navbar/Navbar"
-import UserImg from "../../../assets/Images/Profile.svg"
-import LockImg from "../../../assets/Images/Lock.svg"
-import MailImg from "../../../assets/Images/Message.svg"
-import { Link } from "react-router-dom"
+import React, { useState } from "react";
+import Navbar from "../../shared/Navbar/Navbar";
+import UserImg from "../../../assets/Images/Profile.svg";
+import LockImg from "../../../assets/Images/Lock.svg";
+import MailImg from "../../../assets/Images/Message.svg";
+import { Link } from "react-router-dom";
+import "./Register.css";
 
 function Register() {
-  const [inputEmail, setInputEmail] = useState("")
-  const [inputUsername, setInputUsername] = useState("")
-  const [inputPassword, setInputPassword] = useState("")
-  const [inputPasswordConfirm, setInputPasswordConfirm] = useState("")
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputUsername, setInputUsername] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
+  const [inputPasswordConfirm, setInputPasswordConfirm] = useState("");
 
-  const handleSubmit = (event) => {}
+  const handleSubmit = (event) => {
+  };
 
   const handleInputEmail = (event) => {
-    setInputEmail(event.target.value)
-  }
+    setInputEmail(event.target.value);
+  };
   const handleInputUsername = (event) => {
-    setInputUsername(event.target.value)
-  }
+    setInputUsername(event.target.value);
+  };
   const handleInputPassword = (event) => {
-    setInputPassword(event.target.value)
-  }
+    setInputPassword(event.target.value);
+  };
   const handleInputPasswordConfirm = (event) => {
-    setInputPasswordConfirm(event.target.value)
-  }
+    setInputPasswordConfirm(event.target.value);
+  };
 
   return (
-    <>
+    <div className="register-container">
       <main>
-        <article>
-          <form onSubmit={handleSubmit}>
-            <h1>Creat an account</h1>
-            <div>
+        <article className="register-article">
+          <form onSubmit={handleSubmit} className="register-form">
+            <h1 className="register-header">Create an account</h1>
+            <div className="input-container">
               <label htmlFor="email">email</label>
-              <img
-                src={MailImg}
-                alt=""
-              />
+              <img src={MailImg} alt="" />
               <input
                 onChange={handleInputEmail}
                 value={inputEmail}
@@ -45,14 +44,12 @@ function Register() {
                 type="email"
                 id="email"
                 name="email"
+                className="input-field"
               />
             </div>
-            <div>
+            <div className="input-container">
               <label htmlFor="username">username</label>
-              <img
-                src={UserImg}
-                alt=""
-              />
+              <img src={UserImg} alt="" />
               <input
                 onChange={handleInputUsername}
                 value={inputUsername}
@@ -60,14 +57,12 @@ function Register() {
                 type="text"
                 id="username"
                 name="username"
+                className="input-field"
               />
             </div>
-            <div>
+            <div className="input-container">
               <label htmlFor="password">password</label>
-              <img
-                src={LockImg}
-                alt=""
-              />
+              <img src={LockImg} alt="" />
               <input
                 onChange={handleInputPassword}
                 value={inputPassword}
@@ -75,14 +70,12 @@ function Register() {
                 type="password"
                 id="password"
                 name="password"
+                className="input-field"
               />
             </div>
-            <div>
+            <div className="input-container">
               <label htmlFor="password-confirm">Confirm password</label>
-              <img
-                src={LockImg}
-                alt=""
-              />
+              <img src={LockImg} alt="" />
               <input
                 onChange={handleInputPasswordConfirm}
                 value={inputPasswordConfirm}
@@ -90,16 +83,21 @@ function Register() {
                 type="password"
                 id="password-confirm"
                 name="password-confirm"
+                className="input-field"
               />
             </div>
-            <button type="submit">Register</button>
+            <button type="submit" className="register-button">
+              Register
+            </button>
           </form>
-          <Link to={"/login"}>Already have an account?</Link>
+          <p className="login-link">
+            Already have an account? <Link to={"/login"}>Log in</Link>
+          </p>
         </article>
       </main>
       <Navbar />
-    </>
-  )
+    </div>
+  );
 }
 
-export default Register
+export default Register;
