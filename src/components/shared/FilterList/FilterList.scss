@@ -1,13 +1,16 @@
 .filter-box{
-  height: 60px;
+  height: 65px;
+  margin-top: 18px;
   overflow: hidden;
-  transition: height 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 
   button{
     all: unset;
     margin-left: auto;
     display: block;
     color: #70B9BE;
+    margin-bottom: 4px;
+    font-weight: 700;
 
     &:hover{
       text-decoration: underline;
@@ -19,19 +22,25 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 10px;
+  padding-left: 5px;
 
   li{
     background-color: #F1F5F5;
-    padding-inline: 22px;
+    padding-inline: 16px;
     line-height: 40px;
     border-radius: 20px;
     color: #0A2533;
+    transition: all 200ms ease-in-out;
+
+    &:hover{
+      transform: scale(1.05);
+      background-color: #70B9BE;
+    }
   }
 }
 
 .see-all{
-  height: 510px;
+  height: fit-content;
 }
 

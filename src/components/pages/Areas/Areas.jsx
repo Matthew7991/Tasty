@@ -13,6 +13,7 @@ function Areas() {
   const handleFoodList = (event) => {
     setArea(event.target.dataset.value)
   }
+
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
       .then((res) => res.json())

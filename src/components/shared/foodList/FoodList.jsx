@@ -1,9 +1,10 @@
 import React from "react";
 import FoodItem from "../FoodItem/FoodItem";
+import './FoodList.scss'
 
 function FoodList({ foodList }) {
   return (
-    <ul>
+    <ul className="food-list">
       {foodList.map((foodItem) => (
         <FoodItem key={foodItem.idMeal} foodItem={foodItem} />
       ))}

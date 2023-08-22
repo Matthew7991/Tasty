@@ -5,7 +5,9 @@ import Areas from "./components/pages/Areas/Areas"
 import Onboarding from "./components/pages/Onboarding/Onboarding"
 import SplashScreen from "./components/pages/SpashScreen/SplashScreen"
 import Details from "./components/pages/Details/Details"
+import Categories from "./components/pages/Categories/Categories"
 import Home from "./components/pages/Home/Home"
+
 
 function App() {
   return (
@@ -25,12 +27,12 @@ function App() {
             element={<Home />}
           />
           <Route
-            path="/area"
+            path="/areas"
             element={<Areas />}
           />
           <Route
             path="/categories"
-            element={<h1>search</h1>}
+            element={<Categories/>}
           />
           <Route
             path="/details/:mealID"
