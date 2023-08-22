@@ -11,7 +11,7 @@ function SearchBar() {
   return (
     <div className="search-bar">
       <div className="search-bar-title">
-        <button>
+        <button className="back-button">
           <FontAwesomeIcon icon={faArrowLeft} onClick={() => navigate(-1)} />
         </button>
         <h1>Search</h1>
