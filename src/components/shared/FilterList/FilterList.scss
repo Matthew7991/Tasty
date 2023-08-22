@@ -1,37 +1,36 @@
-.filter-box{
+.filter-box {
   height: 70px;
   margin-top: 18px;
   overflow: hidden;
   transition: all 200ms ease-in-out;
-  padding-inline: 24px;
 
-  div{
+  div {
     display: flex;
     margin-bottom: 4px;
 
-    h1{
+    h1 {
       font-size: 20px;
     }
-  
-    button{
+
+    button {
       all: unset;
       margin-left: auto;
       display: block;
-      color: #70B9BE;
+      color: #70b9be;
       font-weight: 700;
-  
-      &:hover{
+
+      &:hover {
         text-decoration: underline;
       }
     }
   }
 }
 
-.link{
+.link {
   text-decoration: none;
 }
 
-.filter-list{
+.filter-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -39,41 +38,39 @@
   padding-left: 5px;
   padding: 2px;
 
-  li{
-    background-color: #F1F5F5;
+  li {
+    background-color: #f1f5f5;
     padding-inline: 16px;
     line-height: 40px;
     border-radius: 20px;
-    color: #0A2533;
+    color: #0a2533;
     transition: all 200ms ease-in-out;
 
-    &:hover{
+    &:hover {
       transform: scale(1.05);
-      background-color: #70B9BE;
+      background-color: #70b9be;
     }
   }
 }
 
-.filter-box-home{
+.filter-box-home {
   height: 180px;
-  
-  ul{
+
+  ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    
-    li{
+
+    li {
       font-weight: 700;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 2px;
 
-
-      img{
+      img {
         width: 100%;
       }
     }
   }
-
 }
 
-.see-all{
+.see-all {
   height: fit-content;
 }
