@@ -7,7 +7,9 @@ import SplashScreen from "./components/pages/SpashScreen/SplashScreen"
 import Details from "./components/pages/Details/Details"
 import Categories from "./components/pages/Categories/Categories"
 import Home from "./components/pages/Home/Home"
-
+import Login from "./components/pages/Login/Login"
+import Register from "./components/pages/Register/Register"
+import Favorites from "./components/pages/Favorites/Favorites"
 
 function App() {
   return (
@@ -32,11 +34,23 @@ function App() {
           />
           <Route
             path="/categories"
-            element={<Categories/>}
+            element={<Categories />}
           />
           <Route
             path="/details/:mealID"
             element={<Details />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          <Route
+            path="/register"
+            element={<Register />}
+          />
+          <Route
+            path="/favorites"
+            element={<Favorites />}
           />
         </Routes>
       </BrowserRouter>

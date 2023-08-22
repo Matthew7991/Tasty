@@ -27,7 +27,7 @@
 .navbar a.active svg {
   opacity: 1;
   fill: #70b9be;
-  stroke: none;
+  stroke: #70b9be;
 }
 
 @media (max-width: 768px) {
