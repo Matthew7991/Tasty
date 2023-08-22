@@ -10,6 +10,7 @@
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1),
     0px 4px 10px rgba(151, 162, 176, 0.6);
   border-radius: 10px 10px 0 0;
+  z-index: 1;
 }
 .navbar svg {
   width: 20px;
