@@ -33,7 +33,7 @@ function App() {
             element={<Areas />}
           />
           <Route
-            path="/categories"
+            path="/categoris"
             element={<Categories />}
           />
           <Route
