@@ -7,15 +7,15 @@
   background-color: #70b9be;
   background-image: url(../../../assets/Images/Pattern-SplashScreen.png);
   background-size: cover;
-  background-position: center;
+  background-position: top center;
 }
 
 .logo {
   width: 45px;
   height: auto;
   -webkit-animation: wobble-hor-bottom 0.8s both;
-	        animation: wobble-hor-bottom 0.8s both;
-          animation-iteration-count: infinite;
+  animation: wobble-hor-bottom 0.8s both;
+  animation-iteration-count: infinite;
 }
 
 .app-title {
@@ -24,8 +24,8 @@
   font-weight: 800;
   line-height: 80%;
   -webkit-animation: wobble-hor-bottom 0.8s both;
-	        animation: wobble-hor-bottom 0.8s both;
-          animation-iteration-count: infinite;
+  animation: wobble-hor-bottom 0.8s both;
+  animation-iteration-count: infinite;
 }
 .splash-screen-link {
   text-decoration: none;
@@ -35,68 +35,60 @@
   0%,
   100% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
     -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
   }
   15% {
     -webkit-transform: translateX(-30px) rotate(-6deg);
-            transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
   }
   30% {
     -webkit-transform: translateX(15px) rotate(6deg);
-            transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
   }
   45% {
     -webkit-transform: translateX(-15px) rotate(-3.6deg);
-            transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
   }
   60% {
     -webkit-transform: translateX(9px) rotate(2.4deg);
-            transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
   }
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
-            transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
   }
 }
 @keyframes wobble-hor-bottom {
   0%,
   100% {
     -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
     -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
   }
   15% {
     -webkit-transform: translateX(-30px) rotate(-6deg);
-            transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
   }
   30% {
     -webkit-transform: translateX(15px) rotate(6deg);
-            transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
   }
   45% {
     -webkit-transform: translateX(-15px) rotate(-3.6deg);
-            transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
   }
   60% {
     -webkit-transform: translateX(9px) rotate(2.4deg);
-            transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
   }
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
-            transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
   }
 }
-
-
-
-
-
-
-
-
 
 /* @-webkit-keyframes jello-horizontal {
   0% {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Navbar from "../../shared/Navbar/Navbar"
 import { useNavigate } from "react-router-dom"
 import FoodList from "../../shared/foodList/FoodList"
-import Logo from "../../../assets/Images/Logo.svg"
+import Header from "../../shared/Header/Header"
 import "./Favorites.scss"
 
 function Favorites() {
@@ -29,19 +29,12 @@ function Favorites() {
   return (
     <>
       <main className="favorites">
-        <div className="company-logo">
-          <img
-            src={Logo}
-            alt="logo"
-            className="logo-img"
-          />
-          <h1 className="logo-title">Tasty</h1>
-        </div>
+        <Header />
         <h1>{currentUser.username}'s favorites</h1>
         {currentUser.favorites.length > 0 ? (
           <FoodList foodList={currentUser.favorites} />
         ) : (
-          <p>No favorites</p>
+          <p>No favorites found</p>
         )}
       </main>
       <Navbar />
