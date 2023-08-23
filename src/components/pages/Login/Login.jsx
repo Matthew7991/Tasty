@@ -4,6 +4,7 @@ import UserImg from "../../../assets/Images/Profile.svg"
 import LockImg from "../../../assets/Images/Lock.svg"
 import { Link, useNavigate } from "react-router-dom"
 import "./Login.css"
+import Input from "../../shared/Input/Input"
 
 function Login() {
   const [users, setUsers] = useState(() => {
@@ -69,36 +70,24 @@ function Login() {
             className="login-form"
             onSubmit={handleSubmit}>
             <h1 className="login-header">Welcome back!</h1>
-            <div className="input-container">
-              <label className="input-label" htmlFor="username">username</label>
-              <img
-                src={UserImg}
-                alt=""
-              />
-              <input
-                onChange={handleInputUsername}
-                required
-                type="text"
-                id="username"
-                name="username"
-                className="input-field"
-              />
-            </div>
-            <div className="input-container">
-              <label className="input-label" htmlFor="password">password</label>
-              <img
-                src={LockImg}
-                alt=""
-              />
-              <input
-                onChange={handleInputPassword}
-                required
-                type="password"
-                id="password"
-                name="password"
-                className="input-field"
-              />
-            </div>
+            <Input
+              imgUrl={UserImg}
+              labelText={"username"}
+              name={"username"}
+              placeholder={"Username"}
+              type={"text"}
+              onChange={handleInputUsername}
+              required={true}
+            />
+            <Input
+              imgUrl={LockImg}
+              labelText={"password"}
+              name={"password"}
+              placeholder={"Password"}
+              type={"password"}
+              onChange={handleInputPassword}
+              required={true}
+            />
             <button
               type="submit"
               className="login-button">
