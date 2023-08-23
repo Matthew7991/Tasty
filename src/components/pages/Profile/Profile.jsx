@@ -79,6 +79,7 @@ function Profile() {
         username: inputUsername || currentUser.username,
         email: inputEmail || currentUser.email,
         password: inputPassword || currentUser.password,
+        favorites: currentUser.favorites,
         loggedIn: true,
       },
     ])
@@ -86,10 +87,6 @@ function Profile() {
     setEditUsername(false)
     setEditEmail(false)
     setEditPassword(false)
-
-    // setTimeout(() => {
-    //   navigate("/profile")
-    // }, 500)
   }
 
   if (!currentUser) {
@@ -102,14 +99,17 @@ function Profile() {
         <article className="profile-article">
           <h1 className="profile-header">My Account</h1>
           {editUsername ? (
+
             <div className="profile-section">
               <div className="profile-section">
-                <label>Display Name</label>
+                <label htmlFor="username">Display Name</label>
                 <input
                   type="text"
                   defaultValue={currentUser.username}
                   onChange={handleInputUsername}
                   className="input-field"
+                  id="username"
+
                 />
               </div>
               <button className="profile-button" onClick={handleEdit}>Done</button>
@@ -124,14 +124,16 @@ function Profile() {
             </div>
           )}
           {editEmail ? (
+
             <div className="profile-section">
               <div className="profile-section">
-                <label>Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   defaultValue={currentUser.email}
                   onChange={handleInputEmail}
                   className="input-field"
+                  id="email"
                 />
               </div>
               <button className="profile-button" onClick={handleEdit}>Done</button>
@@ -147,17 +149,21 @@ function Profile() {
           )}
           {editPassword ? (
             <>
+
               <div className="profile-section">
                 <div className="profile-section">
-                  <label>Password</label>
+                  <label htmlFor="password">Password</label>
+
                   <input
+                    id="password"
                     type="password"
                     defaultValue={currentUser.password}
                     onChange={handleInputPassword}
                     className="input-field"
                   />
-                  <label>Confirm password</label>
+                  <label htmlFor="password-confirm">Confirm password</label>
                   <input
+                    id="password-confirm"
                     type="password"
                     defaultValue={currentUser.password}
                     onChange={handleInputPasswordConfirm}
@@ -177,8 +183,9 @@ function Profile() {
             </div>
           )}
           {displayError && <output>User already exists</output>}
-          {passwordNotSame && <output>Password doesn't match</output>}
+          {passwordNotSame && <output>Passwords don't match</output>}
           <button className="logout-button" onClick={logOutUser}>Log out</button>
+          <button onClick={logOutUser}>Log out</button>
         </article>
       </main>
       <Navbar />

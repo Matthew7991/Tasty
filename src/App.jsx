@@ -13,6 +13,7 @@ import Favorites from "./components/pages/Favorites/Favorites"
 import Profile from "./components/pages/Profile/Profile"
 import { filterListValue } from "./Context/filterListValue"
 import { useState } from "react"
+import SearchItem from "./components/pages/SearchItem/SearchItem"
 
 function App() {
   const [filterValue, setFilterValue] = useState('');
@@ -61,6 +62,10 @@ function App() {
           <Route
             path="/profile"
             element={<Profile />}
+          />
+          <Route 
+          path="/search"
+          element={<SearchItem/>}
           />
         </Routes>
       </BrowserRouter>

@@ -54,6 +54,7 @@ function Register() {
         username: inputUsername,
         email: inputEmail,
         password: inputPassword,
+        favorites: [],
         loggedIn: true,
       },
     ])

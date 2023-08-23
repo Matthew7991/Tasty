@@ -5,6 +5,16 @@
   margin-inline: auto;
   margin-bottom: 106px;
 
+  svg {
+    width: 24px;
+    stroke: #97a2b0;
+  }
+
+  button.active svg {
+    fill: #70b9be;
+    stroke: #70b9be;
+  }
+
   img {
     min-width: 33%;
     max-width: 100%;
