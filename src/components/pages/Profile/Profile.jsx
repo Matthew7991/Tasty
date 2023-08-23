@@ -55,9 +55,11 @@ function Profile() {
 
   const handleEdit = () => {
     if (
-      users.find((user) => {
-        return user.username === inputUsername && user.email === inputEmail
-      })
+      users
+        .filter((user) => user.loggedIn !== true)
+        .find((user) => {
+          return user.username === inputUsername || user.email === inputEmail
+        })
     ) {
       setDisplayError(true)
       setPasswordNotSame(false)
