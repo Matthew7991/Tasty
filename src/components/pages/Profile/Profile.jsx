@@ -99,7 +99,6 @@ function Profile() {
         <article className="profile-article">
           <h1 className="profile-header">My Account</h1>
           {editUsername ? (
-
             <div className="profile-section">
               <div className="profile-section">
                 <label htmlFor="username">Display Name</label>
@@ -109,10 +108,13 @@ function Profile() {
                   onChange={handleInputUsername}
                   className="input-field"
                   id="username"
-
                 />
               </div>
-              <button className="profile-button" onClick={handleEdit}>Done</button>
+              <button
+                className="profile-button"
+                onClick={handleEdit}>
+                Done
+              </button>
             </div>
           ) : (
             <div className="profile-section">
@@ -120,11 +122,14 @@ function Profile() {
                 <p>Display Name</p>
                 <p>{currentUser.username}</p>
               </div>
-              <button className="profile-button" onClick={() => setEditUsername(true)}>Edit</button>
+              <button
+                className="profile-button"
+                onClick={() => setEditUsername(true)}>
+                Edit
+              </button>
             </div>
           )}
           {editEmail ? (
-
             <div className="profile-section">
               <div className="profile-section">
                 <label htmlFor="email">Email</label>
@@ -136,7 +141,11 @@ function Profile() {
                   id="email"
                 />
               </div>
-              <button className="profile-button" onClick={handleEdit}>Done</button>
+              <button
+                className="profile-button"
+                onClick={handleEdit}>
+                Done
+              </button>
             </div>
           ) : (
             <div className="profile-section">
@@ -144,12 +153,15 @@ function Profile() {
                 <p>Email</p>
                 <p>{currentUser.email}</p>
               </div>
-              <button className="profile-button" onClick={() => setEditEmail(true)}>Edit</button>
+              <button
+                className="profile-button"
+                onClick={() => setEditEmail(true)}>
+                Edit
+              </button>
             </div>
           )}
           {editPassword ? (
             <>
-
               <div className="profile-section">
                 <div className="profile-section">
                   <label htmlFor="password">Password</label>
@@ -170,7 +182,11 @@ function Profile() {
                     className="input-field"
                   />
                 </div>
-                <button className="profile-button" onClick={handleEdit}>Done</button>
+                <button
+                  className="profile-button"
+                  onClick={handleEdit}>
+                  Done
+                </button>
               </div>
             </>
           ) : (
@@ -179,13 +195,20 @@ function Profile() {
                 <p>Password</p>
                 <p>{currentUser.password.replaceAll(/./g, "*")}</p>
               </div>
-              <button className="profile-button" onClick={() => setEditPassword(true)}>Edit</button>
+              <button
+                className="profile-button"
+                onClick={() => setEditPassword(true)}>
+                Edit
+              </button>
             </div>
           )}
           {displayError && <output>User already exists</output>}
           {passwordNotSame && <output>Passwords don't match</output>}
-          <button className="logout-button" onClick={logOutUser}>Log out</button>
-          <button onClick={logOutUser}>Log out</button>
+          <button
+            className="logout-button"
+            onClick={logOutUser}>
+            Log out
+          </button>
         </article>
       </main>
       <Navbar />
