@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./FilterList.scss";
 import { Link, useLocation } from "react-router-dom";
+import { filterListValue } from "../../../Context/filterListValue";
 
 function FilterList({ title, api, onHandleFoodList, filterTitle, select }) {
   const [filterList, setFilterList] = useState([]);
   const [seeAll, setSeeAll] = useState(false);
   const location = useLocation().pathname;
   const [loading, setLoading] = useState(true);
+  const setFilterFunction = useContext(filterListValue).setFilterValue;
+
+  const setFilterValue = (event) => {
+    setFilterFunction(event.target.dataset.value);
+  };
 
   const handelSeeAll = () => {
     setSeeAll((prev) => (prev = !prev));
@@ -23,12 +29,12 @@ function FilterList({ title, api, onHandleFoodList, filterTitle, select }) {
               : "meals"
           ]
         );
-        setLoading(false)
+        setLoading(false);
       });
   }, []);
 
   if (loading) {
-    return <div className="loader"></div>
+    return <div className="loader"></div>;
   }
 
   return (
@@ -61,11 +67,13 @@ function FilterList({ title, api, onHandleFoodList, filterTitle, select }) {
               >
                 <li
                   data-value={dataItem[title].toLowerCase()}
-                  onClick={onHandleFoodList}
-                  className='filter-item'
+                  onClick={(event) => {
+                    setFilterValue(event);
+                  }}
+                  className="filter-item"
                 >
                   {location === "/home" && title === "strCategory" && (
-                    <img src={dataItem.strCategoryThumb} />
+                    <img src={dataItem.strCategoryThumb} data-value={dataItem[title].toLowerCase()} />
                   )}
                   {dataItem[title]}
                 </li>
@@ -76,7 +84,9 @@ function FilterList({ title, api, onHandleFoodList, filterTitle, select }) {
                 key={dataItem[title]}
                 data-value={dataItem[title].toLowerCase()}
                 onClick={onHandleFoodList}
-                className={`filter-item ${select === dataItem[title].toLowerCase() && 'active2'}`}
+                className={`filter-item ${
+                  select === dataItem[title].toLowerCase() && "active2"
+                }`}
               >
                 {location === "/home" && title === "strCategory" && (
                   <img src={dataItem.strCategoryThumb} />

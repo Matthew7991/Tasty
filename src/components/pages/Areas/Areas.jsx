@@ -1,14 +1,21 @@
-
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SearchBar from '../../shared/SearchBar/SearchBar'
-import './Areas.scss'
 import FilterList from '../../shared/FilterList/FilterList'
 import FoodList from '../../shared/foodList/FoodList'
 import { areaFilterApi } from '../../../utilities/areaFilterApi'
 import Navbar from '../../shared/Navbar/Navbar'
+import { filterListValue } from '../../../Context/filterListValue'
+import './Areas.scss'
 
 function Areas() {
-  const [area, setArea] = useState("american")
+  const filterValue = useContext(filterListValue).filterValue;
+  const [area, setArea] = useState(() => {
+    if(filterValue){
+      return filterValue
+    }else{
+      return 'american'
+    }
+  })
   const [foodList, setFoodList] = useState([]);
   const [serachInput, setSerachInput] = useState('');
 
