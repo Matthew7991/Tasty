@@ -12,17 +12,16 @@
 .random-food-link {
   text-decoration: none;
 
-  background-color: #70b9be; 
-  color: #fff; 
+  background-color: #70b9be;
+  color: #fff;
   display: grid;
   padding: 10px;
   padding-left: 20px;
-  padding-top: 100px; 
   padding-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 16px; 
+  border-radius: 16px;
   overflow: hidden;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
   position: relative;
   width: 75%;
   grid-auto-rows: 1fr;
@@ -33,7 +32,6 @@
   font-size: 1.125rem;
   line-height: 110%;
   width: 75%;
-
 }
 
 .random-food-link:hover {
@@ -64,4 +62,3 @@
   top: 0;
   border-radius: 25px;
 }
-
