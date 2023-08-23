@@ -17,6 +17,10 @@
 .back-button {
   border: none;
   background: none;
-  padding: 4px;
+  padding: 0px;
   cursor: pointer;
+}
+
+.back-button svg {
+  height: 16px;
 }

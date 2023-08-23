@@ -12,6 +12,8 @@
 
 .onboarding-image {
   margin-block: auto;
+  max-height: 50%;
+  padding-inline: 24px;
 }
 
 .onboarding-content {
