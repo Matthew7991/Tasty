@@ -23,19 +23,9 @@
   color: #70B9BE;
   font-size: 24px;
   margin-bottom: 15px;
+  text-align: center;
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.input-field {
-  padding: 10px;
-  border: 1px solid #70B9BE;
-  border-radius: 5px;
-}
 
 .login-button {
   background-color: #70B9BE;
