@@ -1,36 +1,43 @@
-
-.random-food{
-  padding-inline: 24px;
+.random-food {
+  padding-top: 16px;
 }
 
 .random-food-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  color: #0A2533;
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #0a2533;
+  line-height: 130%;
 }
 
 .random-food-link {
   text-decoration: none;
-  background-color: #70B9BE; 
+
+  background-color: #70b9be; 
   color: #fff; 
-  display: block;
+  display: grid;
   padding: 10px;
   padding-left: 20px;
   padding-top: 100px; 
   padding-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 25px; 
+  border-radius: 16px; 
+  overflow: hidden;
   transition: background-color 0.3s ease; 
   position: relative;
+  width: 75%;
+  grid-auto-rows: 1fr;
 }
-.random-food-name{
-  margin-bottom: 10px;
-  max-width: 80%;
+
+.random-food-name {
+  margin-bottom: 8px;
+  font-size: 1.125rem;
+  line-height: 110%;
+  width: 75%;
+
 }
 
 .random-food-link:hover {
-  background-color: #f5f5f5; 
+  background-color: #f5f5f5;
 }
 
 .random-food-details {
@@ -41,19 +48,20 @@
 .random-food-category,
 .random-food-area {
   margin: 0;
-  font-size: 20px;
+  font-size: 0.875rem;
   color: #fff;
-  padding-right: 20px;
+  line-height: 145%;
+  opacity: 0.75;
 }
-.random-food-img-wraper{
+.random-food-img-wraper {
   display: flex;
 }
 .random-food-img {
   height: 70%;
   width: auto;
-  position:absolute;
+  position: absolute;
   right: 0;
   top: 0;
   border-radius: 25px;
-
 }
+

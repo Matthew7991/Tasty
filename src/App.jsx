@@ -10,6 +10,7 @@ import Home from "./components/pages/Home/Home"
 import Login from "./components/pages/Login/Login"
 import Register from "./components/pages/Register/Register"
 import Favorites from "./components/pages/Favorites/Favorites"
+import Profile from "./components/pages/Profile/Profile"
 
 function App() {
   return (
@@ -51,6 +52,10 @@ function App() {
           <Route
             path="/favorites"
             element={<Favorites />}
+          />
+          <Route
+            path="/profile"
+            element={<Profile />}
           />
         </Routes>
       </BrowserRouter>

@@ -1,11 +1,10 @@
-
 .splash-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #70B9BE;
+  background-color: #70b9be;
   background-image: url(../../../assets/Images/Pattern-SplashScreen.png);
   background-size: cover;
   background-position: center;
@@ -19,7 +18,9 @@
 .app-title {
   font-size: 2.5rem;
   color: #fff;
+  font-weight: 800;
+  line-height: 80%;
 }
-.splash-screen-link{
+.splash-screen-link {
   text-decoration: none;
 }

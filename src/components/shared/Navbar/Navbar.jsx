@@ -1,8 +1,10 @@
 import React from "react"
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import "./Navbar.css"
 
 const Navbar = () => {
+  const location = useLocation().pathname
+
   return (
     <div className="navbar">
       <NavLink to="/home">
@@ -86,7 +88,11 @@ const Navbar = () => {
           </g>
         </svg>
       </NavLink>
-      <NavLink to="/login">
+      <NavLink
+        to="/profile"
+        className={
+          ["/profile", "/login", "/register"].includes(location) && "active"
+        }>
         <svg
           width="17"
           height="20"
@@ -116,7 +122,6 @@ const Navbar = () => {
           </g>
         </svg>
       </NavLink>
-
     </div>
   )
 }

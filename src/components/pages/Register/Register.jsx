@@ -7,11 +7,10 @@ import { Link, useNavigate } from "react-router-dom"
 import "./Register.css"
 
 function Register() {
-  const [inputEmail, setInputEmail] = useState("");
-  const [inputUsername, setInputUsername] = useState("");
-  const [inputPassword, setInputPassword] = useState("");
-  const [inputPasswordConfirm, setInputPasswordConfirm] = useState("");
-
+  const [inputEmail, setInputEmail] = useState("")
+  const [inputUsername, setInputUsername] = useState("")
+  const [inputPassword, setInputPassword] = useState("")
+  const [inputPasswordConfirm, setInputPasswordConfirm] = useState("")
 
   const [displayError, setDisplayError] = useState(false)
   const [passwordNotSame, setPasswordNotSame] = useState(false)
@@ -21,14 +20,20 @@ function Register() {
     return usersStorage ? usersStorage : []
   })
 
+  const currentUser = users.find((user) => user.loggedIn === true)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/profile")
+    }
+  }, [users])
 
   const handleSubmit = (event) => {
     event.preventDefault()
 
     if (
       users.find((user) => {
-        console.log(user)
         return user.username === inputUsername || user.email === inputEmail
       })
     ) {
@@ -49,7 +54,7 @@ function Register() {
         username: inputUsername,
         email: inputEmail,
         password: inputPassword,
-        loggedIn: false,
+        loggedIn: true,
       },
     ])
 
@@ -63,27 +68,32 @@ function Register() {
   }, [users])
 
   const handleInputEmail = (event) => {
-    setInputEmail(event.target.value);
-  };
+    setInputEmail(event.target.value)
+  }
   const handleInputUsername = (event) => {
-    setInputUsername(event.target.value);
-  };
+    setInputUsername(event.target.value)
+  }
   const handleInputPassword = (event) => {
-    setInputPassword(event.target.value);
-  };
+    setInputPassword(event.target.value)
+  }
   const handleInputPasswordConfirm = (event) => {
-    setInputPasswordConfirm(event.target.value);
-  };
+    setInputPasswordConfirm(event.target.value)
+  }
 
   return (
     <div className="register-container">
       <main>
         <article className="register-article">
-          <form onSubmit={handleSubmit} className="register-form">
+          <form
+            onSubmit={handleSubmit}
+            className="register-form">
             <h1 className="register-header">Create an account</h1>
             <div className="input-container">
               <label htmlFor="email">email</label>
-              <img src={MailImg} alt="" />
+              <img
+                src={MailImg}
+                alt=""
+              />
               <input
                 onChange={handleInputEmail}
                 value={inputEmail}
@@ -96,7 +106,10 @@ function Register() {
             </div>
             <div className="input-container">
               <label htmlFor="username">username</label>
-              <img src={UserImg} alt="" />
+              <img
+                src={UserImg}
+                alt=""
+              />
               <input
                 onChange={handleInputUsername}
                 value={inputUsername}
@@ -109,7 +122,10 @@ function Register() {
             </div>
             <div className="input-container">
               <label htmlFor="password">password</label>
-              <img src={LockImg} alt="" />
+              <img
+                src={LockImg}
+                alt=""
+              />
               <input
                 onChange={handleInputPassword}
                 value={inputPassword}
@@ -122,7 +138,10 @@ function Register() {
             </div>
             <div className="input-container">
               <label htmlFor="password-confirm">Confirm password</label>
-              <img src={LockImg} alt="" />
+              <img
+                src={LockImg}
+                alt=""
+              />
               <input
                 onChange={handleInputPasswordConfirm}
                 value={inputPasswordConfirm}
@@ -134,13 +153,14 @@ function Register() {
               />
             </div>
 
-            <button type="submit" className="register-button">
+            <button
+              type="submit"
+              className="register-button">
               Register
             </button>
             <br />
             {displayError && <output>User already exists</output>}
             {passwordNotSame && <output>Password doesn't match</output>}
-            
           </form>
           <p className="login-link">
             Already have an account? <Link to={"/login"}>Log in</Link>
@@ -149,7 +169,7 @@ function Register() {
       </main>
       <Navbar />
     </div>
-  );
+  )
 }
 
-export default Register;
+export default Register

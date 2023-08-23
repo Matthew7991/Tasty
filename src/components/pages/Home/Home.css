@@ -1,4 +1,6 @@
-.home-container{
+.home-container {
   height: 100vh;
-  padding-top: 40px;
+  padding-inline: 24px;
+  padding-top: 24px;
+  padding-bottom: 106px;
 }

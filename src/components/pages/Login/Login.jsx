@@ -1,11 +1,9 @@
-
 import React, { useEffect, useState } from "react"
 import Navbar from "../../shared/Navbar/Navbar"
 import UserImg from "../../../assets/Images/Profile.svg"
 import LockImg from "../../../assets/Images/Lock.svg"
-import { Link } from "react-router-dom"
-import "./Login.css";
-
+import { Link, useNavigate } from "react-router-dom"
+import "./Login.css"
 
 function Login() {
   const [users, setUsers] = useState(() => {
@@ -17,6 +15,15 @@ function Login() {
   const [inputPassword, setInputPassword] = useState("")
   const [loginDataInvalid, setLoginDataInvalid] = useState(false)
 
+  const currentUser = users.find((user) => user.loggedIn === true)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/profile")
+    }
+  }, [users])
+
   const handleInputUsername = (event) => {
     setInputUsername(event.target.value)
   }
@@ -27,13 +34,12 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    console.log(users)
-
     if (
       !users.find(
         (user) =>
-          (user.username !== inputUsername && user.email !== inputUsername) ||
-          user.password !== inputPassword
+          (user.password === inputPassword &&
+            user.username === inputUsername) ||
+          user.email === inputUsername
       )
     ) {
       setLoginDataInvalid(true)
@@ -54,14 +60,21 @@ function Login() {
   }, [users])
 
   return (
-    <div className="login-container" style={{ backgroundColor: "#70B9BE" }}>
+    <div
+      className="login-container"
+      style={{ backgroundColor: "#70B9BE" }}>
       <main>
         <article className="login-article">
-          <form className="login-form" onSubmit={handleSubmit}>
+          <form
+            className="login-form"
+            onSubmit={handleSubmit}>
             <h1 className="login-header">Welcome back!</h1>
             <div className="input-container">
               <label htmlFor="username">username</label>
-              <img src={UserImg} alt="" />
+              <img
+                src={UserImg}
+                alt=""
+              />
               <input
                 onChange={handleInputUsername}
                 required
@@ -73,7 +86,10 @@ function Login() {
             </div>
             <div className="input-container">
               <label htmlFor="password">password</label>
-              <img src={LockImg} alt="" />
+              <img
+                src={LockImg}
+                alt=""
+              />
               <input
                 onChange={handleInputPassword}
                 required
@@ -83,7 +99,11 @@ function Login() {
                 className="input-field"
               />
             </div>
-            <button type="submit" className="login-button">Log In</button>
+            <button
+              type="submit"
+              className="login-button">
+              Log In
+            </button>
             {loginDataInvalid && <output>Login or password invalid</output>}
           </form>
           <p className="register-link">
@@ -93,7 +113,7 @@ function Login() {
       </main>
       <Navbar />
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login
