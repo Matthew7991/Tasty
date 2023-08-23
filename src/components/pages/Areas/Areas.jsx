@@ -40,7 +40,7 @@ function Areas() {
 
   useEffect(() => {
     if (foodList.length > 0) {
-      setDisplay(foodList.filter(item => item.strMeal.includes(serachInput)))
+      setDisplay(foodList.filter(item => item.strMeal.toLowerCase().includes(serachInput)))
     }
   }, [serachInput, foodList])
 

@@ -1,0 +1,22 @@
+.company-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #70b9be;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+
+.logo-img {
+  width: 45px;
+  height: auto;
+}
+
+.logo-title {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 800;
+  line-height: 80%;
+}

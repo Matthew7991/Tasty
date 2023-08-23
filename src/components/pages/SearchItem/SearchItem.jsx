@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SearchBar from '../../shared/SearchBar/SearchBar'
 import FoodList from '../../shared/foodList/FoodList'
 import Navbar from '../../shared/Navbar/Navbar';
+import Header from '../../shared/Header/Header';
 
 
 function SearchItem() {
@@ -27,9 +28,10 @@ function SearchItem() {
   }
 
   return (
-    <div className='search-page'>
+    <div className='areas'>
+      <Header/>
       <SearchBar onHandleSerachInput={handleSerachInput}/>
-      {serachInput && foodList ? <FoodList foodList={foodList} /> : <p>Not Result</p>}
+      {serachInput && foodList ? <FoodList foodList={foodList} /> : <h2>No Result</h2>}
       <Navbar/>
     </div>
   )
