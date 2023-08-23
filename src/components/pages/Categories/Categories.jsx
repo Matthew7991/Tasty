@@ -16,8 +16,14 @@ function Categories() {
       return 'beef'
     }
   });
+  const [loading, setLoading] = useState(true);
   const [foodList, setFoodList] = useState([]);
+  const [serachInput, setSerachInput] = useState('');
+  const [display, setDisplay] = useState(foodList);
 
+  const handleSerachInput = (event) => {
+    setSerachInput(event.target.value)
+  }
 
   const handleFoodList = (event) => {
     setCategorie(event.target.dataset.value)
@@ -26,15 +32,28 @@ function Categories() {
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categorie}`)
       .then((res) => res.json())
-      .then((data) => setFoodList(data.meals));
+      .then((data) => {
+        setFoodList(data.meals);
+        setLoading(false)
+      });
   }, [categorie]);
+
+  useEffect(() => {
+    if (foodList.length > 0) {
+      setDisplay(foodList.filter(item => item.strMeal.includes(serachInput)))
+    }
+  }, [serachInput, foodList])
+
+  if (loading) {
+    return <div className="loader"></div>;
+  }
 
   return (
     <div>
     <div className='areas'>
-      <SearchBar />
+      <SearchBar onHandleSerachInput={handleSerachInput} />
       <FilterList title = 'strCategory' api = {categorieFilterApi} onHandleFoodList = {handleFoodList} select={categorie} />
-      {foodList ? <FoodList foodList={foodList} /> : <p>Not Result</p>}
+      <FoodList foodList={display} />
     </div>
     <Navbar/>
     </div>
