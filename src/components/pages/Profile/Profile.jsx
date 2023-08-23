@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Navbar from "../../shared/Navbar/Navbar"
 import "./Profile.css"
+import Input from "../../shared/Input/Input"
+import UserImg from "../../../assets/Images/Profile.svg"
+import LockImg from "../../../assets/Images/Lock.svg"
+import MailImg from "../../../assets/Images/Message.svg"
 
 function Profile() {
   const [users, setUsers] = useState(() => {
@@ -100,16 +104,16 @@ function Profile() {
           <h1 className="profile-header">My Account</h1>
           {editUsername ? (
             <div className="profile-section">
-              <div className="profile-section">
-                <label htmlFor="username">Display Name</label>
-                <input
-                  type="text"
-                  defaultValue={currentUser.username}
-                  onChange={handleInputUsername}
-                  className="input-field"
-                  id="username"
-                />
-              </div>
+              <Input
+                imgUrl={UserImg}
+                labelText={"username"}
+                name={"username"}
+                placeholder={"Username"}
+                type={"text"}
+                onChange={handleInputUsername}
+                required={true}
+                defaultValue={currentUser.username}
+              />
               <button
                 className="profile-button"
                 onClick={handleEdit}>
@@ -131,16 +135,16 @@ function Profile() {
           )}
           {editEmail ? (
             <div className="profile-section">
-              <div className="profile-section">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  defaultValue={currentUser.email}
-                  onChange={handleInputEmail}
-                  className="input-field"
-                  id="email"
-                />
-              </div>
+              <Input
+                imgUrl={MailImg}
+                labelText={"email"}
+                name={"email"}
+                placeholder={"Email"}
+                type={"email"}
+                onChange={handleInputEmail}
+                required={true}
+                defaultValue={currentUser.email}
+              />
               <button
                 className="profile-button"
                 onClick={handleEdit}>
@@ -163,25 +167,26 @@ function Profile() {
           {editPassword ? (
             <>
               <div className="profile-section">
-                <div className="profile-section">
-                  <label htmlFor="password">Password</label>
-
-                  <input
-                    id="password"
-                    type="password"
-                    defaultValue={currentUser.password}
-                    onChange={handleInputPassword}
-                    className="input-field"
-                  />
-                  <label htmlFor="password-confirm">Confirm password</label>
-                  <input
-                    id="password-confirm"
-                    type="password"
-                    defaultValue={currentUser.password}
-                    onChange={handleInputPasswordConfirm}
-                    className="input-field"
-                  />
-                </div>
+                <Input
+                  imgUrl={LockImg}
+                  labelText={"password"}
+                  name={"password"}
+                  placeholder={"Password"}
+                  type={"password"}
+                  onChange={handleInputPassword}
+                  required={true}
+                  defaultValue={currentUser.password}
+                />
+                <Input
+                  imgUrl={LockImg}
+                  labelText={"password"}
+                  name={"password-confirm"}
+                  placeholder={"Repeat password"}
+                  type={"password"}
+                  onChange={handleInputPasswordConfirm}
+                  required={true}
+                  defaultValue={currentUser.username}
+                />
                 <button
                   className="profile-button"
                   onClick={handleEdit}>

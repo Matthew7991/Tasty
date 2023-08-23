@@ -5,6 +5,7 @@ import LockImg from "../../../assets/Images/Lock.svg"
 import MailImg from "../../../assets/Images/Message.svg"
 import { Link, useNavigate } from "react-router-dom"
 import "./Register.css"
+import Input from "../../shared/Input/Input"
 
 function Register() {
   const [inputEmail, setInputEmail] = useState("")
@@ -89,79 +90,42 @@ function Register() {
             onSubmit={handleSubmit}
             className="register-form">
             <h1 className="register-header">Create an account</h1>
-            <div className="input-container">
-              <label className="input-label" htmlFor="email" >email</label>
-              <div className="input-field-container">
-              <img
-                src={MailImg}
-                alt=""
-                />
-              <input
-                onChange={handleInputEmail}
-                value={inputEmail}
-                required
-                type="email"
-                id="email"
-                name="email"
-                className="input-field"
-                />
-                </div>
-            </div>
-            <div className="input-container">
-              <label className="input-label" htmlFor="username">username</label>
-              <div className="input-field-container">
-              <img
-                src={UserImg}
-                alt=""
-                />
-              <input
-                onChange={handleInputUsername}
-                value={inputUsername}
-                required
-                type="text"
-                id="username"
-                name="username"
-                className="input-field"
-                />
-                </div>
-            </div>
-            <div className="input-container">
-              <label className="input-label" htmlFor="password">password</label>
-              <div className="input-field-container">
-              <img
-                src={LockImg}
-                alt=""
-                />
-              <input
-                onChange={handleInputPassword}
-                value={inputPassword}
-                required
-                type="password"
-                id="password"
-                name="password"
-                className="input-field"
-                />
-                </div>
-            </div>
-            <div className="input-container">
-              <label className="input-label" htmlFor="password-confirm">Confirm password</label>
-              <div className="input-field-container">
-              <img
-                src={LockImg}
-                alt=""
-                />
-              <input
-                onChange={handleInputPasswordConfirm}
-                value={inputPasswordConfirm}
-                required
-                type="password"
-                id="password-confirm"
-                name="password-confirm"
-                className="input-field"
-                />
-                </div>
-            </div>
-
+            <Input
+              imgUrl={MailImg}
+              labelText={"email"}
+              name={"email"}
+              placeholder={"Email"}
+              type={"email"}
+              onChange={handleInputEmail}
+              required={true}
+            />
+            <Input
+              imgUrl={UserImg}
+              labelText={"username"}
+              name={"username"}
+              placeholder={"Username"}
+              type={"text"}
+              onChange={handleInputUsername}
+              required={true}
+            />
+            <Input
+              imgUrl={LockImg}
+              labelText={"password"}
+              name={"password"}
+              placeholder={"Password"}
+              type={"password"}
+              onChange={handleInputPassword}
+              required={true}
+            />
+            <Input
+              imgUrl={LockImg}
+              labelText={"password"}
+              name={"password-confirm"}
+              placeholder={"Repeat password"}
+              type={"password"}
+              onChange={handleInputPasswordConfirm}
+              required={true}
+            />
             <button
               type="submit"
               className="register-button">
