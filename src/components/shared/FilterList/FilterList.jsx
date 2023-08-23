@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./FilterList.scss";
 import { Link, useLocation } from "react-router-dom";
 
-function FilterList({ title, api, onHandleFoodList, filterTitle }) {
+function FilterList({ title, api, onHandleFoodList, filterTitle, select }) {
   const [filterList, setFilterList] = useState([]);
   const [seeAll, setSeeAll] = useState(false);
   const location = useLocation().pathname;
+  const [loading, setLoading] = useState(true);
 
   const handelSeeAll = () => {
     setSeeAll((prev) => (prev = !prev));
@@ -22,8 +23,13 @@ function FilterList({ title, api, onHandleFoodList, filterTitle }) {
               : "meals"
           ]
         );
+        setLoading(false)
       });
   }, []);
+
+  if (loading) {
+    return <div className="loader"></div>
+  }
 
   return (
     <div
@@ -56,7 +62,7 @@ function FilterList({ title, api, onHandleFoodList, filterTitle }) {
                 <li
                   data-value={dataItem[title].toLowerCase()}
                   onClick={onHandleFoodList}
-                  className="filter-item"
+                  className='filter-item'
                 >
                   {location === "/home" && title === "strCategory" && (
                     <img src={dataItem.strCategoryThumb} />
@@ -70,7 +76,7 @@ function FilterList({ title, api, onHandleFoodList, filterTitle }) {
                 key={dataItem[title]}
                 data-value={dataItem[title].toLowerCase()}
                 onClick={onHandleFoodList}
-                className="filter-item"
+                className={`filter-item ${select === dataItem[title].toLowerCase() && 'active2'}`}
               >
                 {location === "/home" && title === "strCategory" && (
                   <img src={dataItem.strCategoryThumb} />

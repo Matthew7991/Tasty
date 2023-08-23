@@ -9,11 +9,22 @@ import Navbar from '../../shared/Navbar/Navbar'
 
 function Areas() {
   const [area, setArea] = useState("american")
-  const [foodList, setFoodList] = useState([])
+  const [foodList, setFoodList] = useState([]);
+  const [serachInput, setSerachInput] = useState('');
+
+  const handleSerachInput = (event) => {
+    setSerachInput(event.target.value)
+  }
 
   const handleFoodList = (event) => {
     setArea(event.target.dataset.value)
   }
+
+  useEffect(() => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${serachInput}`)
+      .then((res) => res.json())
+      .then((data) => setFoodList(data.meals))
+  }, [serachInput])
 
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
@@ -22,14 +33,12 @@ function Areas() {
   }, [area])
 
   return (
-
     <div>
-
-    <div className='areas'>
-      <SearchBar/>
-      <FilterList title = 'strArea' api = {areaFilterApi} onHandleFoodList = {handleFoodList}/>
-      <FoodList foodList={foodList} />
-    </div>
+      <div className='areas'>
+        <SearchBar onHandleSerachInput={handleSerachInput}/>
+        {!serachInput && <FilterList title = 'strArea' api = {areaFilterApi} onHandleFoodList = {handleFoodList} select={area} />}
+        {foodList ? <FoodList foodList={foodList} /> : <p>Not Result</p>}
+      </div>
       <Navbar/>
     </div>
   )
