@@ -34,7 +34,7 @@ function App() {
             element={<Areas />}
           />
           <Route
-            path="/categoris"
+            path="/categories"
             element={<Categories />}
           />
           <Route

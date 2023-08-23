@@ -19,8 +19,8 @@
       color: #70b9be;
       font-weight: 700;
       cursor: pointer;
-  
-      &:hover{
+
+      &:hover {
         text-decoration: underline;
       }
     }
@@ -38,10 +38,9 @@
   gap: 20px 10px;
   padding-left: 5px;
   padding: 2px;
-   padding-inline: 16px;
-  
-  li{
-    background-color: #F1F5F5;
+
+  li {
+    background-color: #f1f5f5;
     width: 98px;
     text-align: center;
     line-height: 40px;
@@ -52,29 +51,28 @@
     &:hover {
       transform: scale(1.05);
       background-color: #70b9be;
-    cursor: pointer;
-
+      cursor: pointer;
     }
   }
-  .active2{
-    background-color: #70B9BE;
+  .active2 {
+    background-color: #70b9be;
   }
 }
 
-.filter-box-home{
+.filter-box-home {
   height: 400px;
-  
-  ul{
+
+  ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    
-    li{
+
+    li {
       width: fit-content;
       font-weight: 700;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 2px;
       overflow: hidden;
-      
-      img{
+
+      img {
         width: 100%;
       }
     }
@@ -87,7 +85,7 @@
 
 .loader {
   border: 8px solid #f3f3f3;
-  border-top: 8px solid #70B9BE;
+  border-top: 8px solid #70b9be;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -95,6 +93,10 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
