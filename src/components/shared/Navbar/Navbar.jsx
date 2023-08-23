@@ -33,7 +33,7 @@ const Navbar = () => {
           </g>
         </svg>
       </NavLink>
-      <NavLink to="/areas">
+      <NavLink to="/search">
         <svg
           width="21"
           height="21"
