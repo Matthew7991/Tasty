@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Navbar from "../../shared/Navbar/Navbar"
+import "./Profile.css"
 
 function Profile() {
   const [users, setUsers] = useState(() => {
@@ -94,63 +95,71 @@ function Profile() {
 
   return (
     <>
-      <main>
-        <article>
-          <h1>My Account</h1>
+      <main className="profile-container">
+        <article className="profile-article">
+          <h1 className="profile-header">My Account</h1>
           {editUsername ? (
-            <div>
-              <div>
+
+            <div className="profile-section">
+              <div className="profile-section">
                 <label htmlFor="username">Display Name</label>
                 <input
                   type="text"
                   defaultValue={currentUser.username}
                   onChange={handleInputUsername}
+                  className="input-field"
                   id="username"
+
                 />
               </div>
-              <button onClick={handleEdit}>Done</button>
+              <button className="profile-button" onClick={handleEdit}>Done</button>
             </div>
           ) : (
-            <div>
-              <div>
+            <div className="profile-section">
+              <div className="profile-section">
                 <p>Display Name</p>
                 <p>{currentUser.username}</p>
               </div>
-              <button onClick={() => setEditUsername(true)}>Edit</button>
+              <button className="profile-button" onClick={() => setEditUsername(true)}>Edit</button>
             </div>
           )}
           {editEmail ? (
-            <div>
-              <div>
+
+            <div className="profile-section">
+              <div className="profile-section">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   defaultValue={currentUser.email}
                   onChange={handleInputEmail}
+                  className="input-field"
                   id="email"
                 />
               </div>
-              <button onClick={handleEdit}>Done</button>
+              <button className="profile-button" onClick={handleEdit}>Done</button>
             </div>
           ) : (
-            <div>
-              <div>
+            <div className="profile-section">
+              <div className="profile-section">
                 <p>Email</p>
                 <p>{currentUser.email}</p>
               </div>
-              <button onClick={() => setEditEmail(true)}>Edit</button>
+              <button className="profile-button" onClick={() => setEditEmail(true)}>Edit</button>
             </div>
           )}
           {editPassword ? (
             <>
-              <div>
-                <div>
+
+              <div className="profile-section">
+                <div className="profile-section">
                   <label htmlFor="password">Password</label>
+
                   <input
                     id="password"
                     type="password"
                     defaultValue={currentUser.password}
                     onChange={handleInputPassword}
+                    className="input-field"
                   />
                   <label htmlFor="password-confirm">Confirm password</label>
                   <input
@@ -158,22 +167,24 @@ function Profile() {
                     type="password"
                     defaultValue={currentUser.password}
                     onChange={handleInputPasswordConfirm}
+                    className="input-field"
                   />
                 </div>
-                <button onClick={handleEdit}>Done</button>
+                <button className="profile-button" onClick={handleEdit}>Done</button>
               </div>
             </>
           ) : (
-            <div>
-              <div>
+            <div className="profile-section">
+              <div className="profile-section">
                 <p>Password</p>
                 <p>{currentUser.password.replaceAll(/./g, "*")}</p>
               </div>
-              <button onClick={() => setEditPassword(true)}>Edit</button>
+              <button className="profile-button" onClick={() => setEditPassword(true)}>Edit</button>
             </div>
           )}
           {displayError && <output>User already exists</output>}
           {passwordNotSame && <output>Passwords don't match</output>}
+          <button className="logout-button" onClick={logOutUser}>Log out</button>
           <button onClick={logOutUser}>Log out</button>
         </article>
       </main>

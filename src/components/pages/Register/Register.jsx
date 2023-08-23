@@ -90,11 +90,12 @@ function Register() {
             className="register-form">
             <h1 className="register-header">Create an account</h1>
             <div className="input-container">
-              <label htmlFor="email">email</label>
+              <label className="input-label" htmlFor="email" >email</label>
+              <div className="input-field-container">
               <img
                 src={MailImg}
                 alt=""
-              />
+                />
               <input
                 onChange={handleInputEmail}
                 value={inputEmail}
@@ -103,14 +104,16 @@ function Register() {
                 id="email"
                 name="email"
                 className="input-field"
-              />
+                />
+                </div>
             </div>
             <div className="input-container">
-              <label htmlFor="username">username</label>
+              <label className="input-label" htmlFor="username">username</label>
+              <div className="input-field-container">
               <img
                 src={UserImg}
                 alt=""
-              />
+                />
               <input
                 onChange={handleInputUsername}
                 value={inputUsername}
@@ -119,14 +122,16 @@ function Register() {
                 id="username"
                 name="username"
                 className="input-field"
-              />
+                />
+                </div>
             </div>
             <div className="input-container">
-              <label htmlFor="password">password</label>
+              <label className="input-label" htmlFor="password">password</label>
+              <div className="input-field-container">
               <img
                 src={LockImg}
                 alt=""
-              />
+                />
               <input
                 onChange={handleInputPassword}
                 value={inputPassword}
@@ -135,14 +140,16 @@ function Register() {
                 id="password"
                 name="password"
                 className="input-field"
-              />
+                />
+                </div>
             </div>
             <div className="input-container">
-              <label htmlFor="password-confirm">Confirm password</label>
+              <label className="input-label" htmlFor="password-confirm">Confirm password</label>
+              <div className="input-field-container">
               <img
                 src={LockImg}
                 alt=""
-              />
+                />
               <input
                 onChange={handleInputPasswordConfirm}
                 value={inputPasswordConfirm}
@@ -151,7 +158,8 @@ function Register() {
                 id="password-confirm"
                 name="password-confirm"
                 className="input-field"
-              />
+                />
+                </div>
             </div>
 
             <button

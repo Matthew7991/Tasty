@@ -70,7 +70,7 @@ function Login() {
             onSubmit={handleSubmit}>
             <h1 className="login-header">Welcome back!</h1>
             <div className="input-container">
-              <label htmlFor="username">username</label>
+              <label className="input-label" htmlFor="username">username</label>
               <img
                 src={UserImg}
                 alt=""
@@ -85,7 +85,7 @@ function Login() {
               />
             </div>
             <div className="input-container">
-              <label htmlFor="password">password</label>
+              <label className="input-label" htmlFor="password">password</label>
               <img
                 src={LockImg}
                 alt=""
