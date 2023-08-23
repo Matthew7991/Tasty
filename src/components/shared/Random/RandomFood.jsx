@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { randomApi } from "../../../utilities/randomApi"
 import DetailRandomFood from "../DetailRandomFood/DetailRandomFood"
 import "./RandomFood.css"
-import FoodImg from "../../../assets/Images/Frame.svg"
 
 function RandomFood() {
   const date = new Date()
@@ -32,7 +31,7 @@ function RandomFood() {
   }, [randomId])
 
   if (localId === "") {
-    return <h1>loading...</h1>
+    return <div className="loader"></div>
   }
 
   return (
