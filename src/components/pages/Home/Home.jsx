@@ -4,19 +4,12 @@ import "./Home.css"
 import FilterList from "../../shared/FilterList/FilterList"
 import { areaFilterApi } from "../../../utilities/areaFilterApi"
 import RandomFood from "../../shared/Random/RandomFood"
-import Logo from "../../../assets/Images/Logo.svg"
+import Header from "../../shared/Header/Header"
 
 function Home() {
   return (
     <div className="home-container">
-      <div className="company-logo">
-        <img
-          src={Logo}
-          alt="logo"
-          className="logo-img"
-        />
-        <h1 className="logo-title">Tasty</h1>
-      </div>
+      <Header/>
       <RandomFood />
       <FilterList
         title="strArea"
