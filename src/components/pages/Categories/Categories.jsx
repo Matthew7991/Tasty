@@ -1,12 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SearchBar from '../../shared/SearchBar/SearchBar'
 import FilterList from '../../shared/FilterList/FilterList'
 import FoodList from '../../shared/foodList/FoodList'
 import { categorieFilterApi } from '../../../utilities/categorieFilterApi'
 import Navbar from "../../shared/Navbar/Navbar"
+import { filterListValue } from '../../../Context/filterListValue'
+
 
 function Categories() {
-  const [categorie, setCategorie] = useState('beef');
+  const filterValue = useContext(filterListValue).filterValue;
+  const [categorie, setCategorie] = useState(() => {
+    if(filterValue){
+      return filterValue
+    }else{
+      return 'beef'
+    }
+  });
   const [foodList, setFoodList] = useState([]);
   const [serachInput, setSerachInput] = useState('');
 

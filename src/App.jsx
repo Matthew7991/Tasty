@@ -11,20 +11,25 @@ import Login from "./components/pages/Login/Login"
 import Register from "./components/pages/Register/Register"
 import Favorites from "./components/pages/Favorites/Favorites"
 import Profile from "./components/pages/Profile/Profile"
+import { filterListValue } from "./Context/filterListValue"
+import { useState } from "react"
 
 function App() {
+  const [filterValue, setFilterValue] = useState('');
+
   return (
     <>
+    <filterListValue.Provider value={{filterValue, setFilterValue}}>
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
             element={<SplashScreen />}
-          />
+            />
           <Route
             path="/onboarding"
             element={<Onboarding />}
-          />
+            />
           <Route
             path="/home"
             element={<Home />}
@@ -44,7 +49,7 @@ function App() {
           <Route
             path="/login"
             element={<Login />}
-          />
+            />
           <Route
             path="/register"
             element={<Register />}
@@ -52,13 +57,14 @@ function App() {
           <Route
             path="/favorites"
             element={<Favorites />}
-          />
+            />
           <Route
             path="/profile"
             element={<Profile />}
           />
         </Routes>
       </BrowserRouter>
+    </filterListValue.Provider>
     </>
   )
 }
