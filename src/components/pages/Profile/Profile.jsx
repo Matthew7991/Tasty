@@ -78,6 +78,7 @@ function Profile() {
         username: inputUsername || currentUser.username,
         email: inputEmail || currentUser.email,
         password: inputPassword || currentUser.password,
+        favorites: currentUser.favorites,
         loggedIn: true,
       },
     ])
@@ -85,10 +86,6 @@ function Profile() {
     setEditUsername(false)
     setEditEmail(false)
     setEditPassword(false)
-
-    // setTimeout(() => {
-    //   navigate("/profile")
-    // }, 500)
   }
 
   if (!currentUser) {
@@ -103,11 +100,12 @@ function Profile() {
           {editUsername ? (
             <div>
               <div>
-                <label>Display Name</label>
+                <label htmlFor="username">Display Name</label>
                 <input
                   type="text"
                   defaultValue={currentUser.username}
                   onChange={handleInputUsername}
+                  id="username"
                 />
               </div>
               <button onClick={handleEdit}>Done</button>
@@ -124,11 +122,12 @@ function Profile() {
           {editEmail ? (
             <div>
               <div>
-                <label>Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   defaultValue={currentUser.email}
                   onChange={handleInputEmail}
+                  id="email"
                 />
               </div>
               <button onClick={handleEdit}>Done</button>
@@ -146,14 +145,16 @@ function Profile() {
             <>
               <div>
                 <div>
-                  <label>Password</label>
+                  <label htmlFor="password">Password</label>
                   <input
+                    id="password"
                     type="password"
                     defaultValue={currentUser.password}
                     onChange={handleInputPassword}
                   />
-                  <label>Confirm password</label>
+                  <label htmlFor="password-confirm">Confirm password</label>
                   <input
+                    id="password-confirm"
                     type="password"
                     defaultValue={currentUser.password}
                     onChange={handleInputPasswordConfirm}
@@ -172,7 +173,7 @@ function Profile() {
             </div>
           )}
           {displayError && <output>User already exists</output>}
-          {passwordNotSame && <output>Password doesn't match</output>}
+          {passwordNotSame && <output>Passwords don't match</output>}
           <button onClick={logOutUser}>Log out</button>
         </article>
       </main>
