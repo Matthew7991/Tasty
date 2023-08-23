@@ -16,7 +16,10 @@ function Areas() {
       return 'american'
     }
   })
+  const [loading, setLoading] = useState(true);
   const [foodList, setFoodList] = useState([]);
+  const [serachInput, setSerachInput] = useState('');
+  const [display, setDisplay] = useState(foodList);
 
   const handleSerachInput = (event) => {
     setSerachInput(event.target.value)
@@ -29,15 +32,28 @@ function Areas() {
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
       .then((res) => res.json())
-      .then((data) => setFoodList(data.meals))
+      .then((data) => {
+        setFoodList(data.meals)
+        setLoading(false)
+      })
   }, [area])
+
+  useEffect(() => {
+    if (foodList.length > 0) {
+      setDisplay(foodList.filter(item => item.strMeal.includes(serachInput)))
+    }
+  }, [serachInput, foodList])
+
+  if (loading) {
+    return <div className="loader"></div>;
+  }
 
   return (
     <div>
       <div className='areas'>
-        <SearchBar />
+        <SearchBar onHandleSerachInput={handleSerachInput} />
         <FilterList title = 'strArea' api = {areaFilterApi} onHandleFoodList = {handleFoodList} select={area} />
-        {foodList ? <FoodList foodList={foodList} /> : <p>Not Result</p>}
+        <FoodList foodList={display} />
       </div>
       <Navbar/>
     </div>
