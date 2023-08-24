@@ -21,6 +21,7 @@
   position: relative;
   width: 75%;
   grid-auto-rows: 1fr;
+  max-width: 500px;
 }
 
 .random-food-name {
