@@ -22,8 +22,8 @@ function RandomFood() {
   useEffect(() => {
     if (randomId) {
       if (localId === null) {
-        setLocaleId(randomId)
         localStorage.setItem(`${now}`, randomId)
+        setLocaleId(randomId)
       } else {
         setLocaleId(localStorage.getItem(`${now}`))
       }
@@ -35,8 +35,8 @@ function RandomFood() {
   }
 
   return (
-    <div className='random-food'>
-      <h1 className='random-food-title'>Meal of the Day</h1>
+    <div className="random-food">
+      <h1 className="random-food-title">Meal of the Day</h1>
       <DetailRandomFood localId={localId ? localId : randomId} />
     </div>
   )
