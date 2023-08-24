@@ -75,7 +75,7 @@ function Details() {
   return (
     <main>
       <article className="details">
-        <div className="img-wrapper">
+        <div className="img-wrapper-inner">
           {currentUser && (
             <button
               className={`${
