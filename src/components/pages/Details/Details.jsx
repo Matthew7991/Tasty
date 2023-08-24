@@ -203,7 +203,7 @@ function Details() {
           {showInstructions && (
             <div className="instructions">
               <h2>Instructions</h2>
-              <p>{meal.strInstructions}</p>
+              <pre>{meal.strInstructions}</pre>
               <a
                 href={meal.strYoutube}
                 target="_blank">
