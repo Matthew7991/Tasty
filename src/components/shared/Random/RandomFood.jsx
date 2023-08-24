@@ -24,7 +24,7 @@ function RandomFood() {
   }, [])
 
   useEffect(() => {
-    localStorage.setItem("users", randomId)
+    localStorage.setItem(`${now}`, randomId)
   }, [randomId])
 
   if (!randomId) {
