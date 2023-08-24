@@ -34,7 +34,7 @@ function Favorites() {
         {currentUser.favorites.length > 0 ? (
           <FoodList foodList={currentUser.favorites} />
         ) : (
-          <p>No favorites found</p>
+          <p className="no-result">No favorites found</p>
         )}
       </main>
       <Navbar />
