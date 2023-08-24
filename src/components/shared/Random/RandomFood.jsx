@@ -9,6 +9,7 @@ function RandomFood() {
     date.getDate().toString() +
     date.getMonth().toString() +
     date.getFullYear().toString()
+  localStorage.setItem(`Test${now}`, 642642)
 
   const [randomId, setRandomId] = useState("")
   const [localId, setLocaleId] = useState("")
@@ -24,11 +25,11 @@ function RandomFood() {
     if (randomId) {
       console.log({ localId })
       console.log("localId null?", localId === null)
-      if (localId === null) {
+      if (!localId) {
+        localStorage.setItem(`T${now}`, randomId)
         setLocaleId(randomId)
-        localStorage.setItem(`${now}`, randomId)
       } else {
-        setLocaleId(localStorage.getItem(`${now}`))
+        setLocaleId(localStorage.getItem(`T${now}`))
       }
     }
   }, [randomId])
