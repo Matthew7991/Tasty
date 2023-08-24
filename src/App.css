@@ -10,6 +10,10 @@
   font-family: "Montserrat";
 }
 
-.no-result{
+.no-result {
   margin-top: 24px;
+}
+
+output {
+  color: red;
 }

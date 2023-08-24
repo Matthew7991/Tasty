@@ -64,7 +64,7 @@ function Login() {
     <div
       className="login-container"
       style={{ backgroundColor: "#70B9BE" }}>
-      <main>
+      <main className="login-main">
         <article className="login-article">
           <form
             className="login-form"

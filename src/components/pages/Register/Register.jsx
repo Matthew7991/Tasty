@@ -83,8 +83,10 @@ function Register() {
   }
 
   return (
-    <div className="register-container">
-      <main>
+    <div
+      className="register-container"
+      style={{ backgroundColor: "#70B9BE" }}>
+      <main className="register-main">
         <article className="register-article">
           <form
             onSubmit={handleSubmit}
