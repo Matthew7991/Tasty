@@ -6,37 +6,40 @@
   margin-bottom: 106px;
   position: relative;
 
-  > button {
-    width: 32px;
+  .img-wrapper {
+    position: relative;
+    > button {
+      width: 32px;
 
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    z-index: 1;
-    background: none;
-    border: none;
-  }
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 1;
+      background: none;
+      border: none;
+    }
 
-  svg {
-    width: 100%;
-    height: 100%;
-    stroke: #97a2b0;
-    fill: #fff;
-  }
+    svg {
+      width: 100%;
+      height: 100%;
+      stroke: #97a2b0;
+      fill: #fff;
+    }
 
-  button.active svg {
-    fill: #70b9be;
-    stroke: #70b9be;
-  }
+    button.active svg {
+      fill: #70b9be;
+      stroke: #70b9be;
+    }
 
-  img {
-    min-width: 33%;
-    max-width: 100%;
-    width: fit-content;
-    display: block;
-    margin-bottom: -16px;
-    margin-inline: auto;
-    filter: drop-shadow(0px 0px 40px rgba(101, 123, 154, 0.1));
+    img {
+      min-width: 33%;
+      max-width: 100%;
+      width: fit-content;
+      display: block;
+      margin-bottom: -16px;
+      margin-inline: auto;
+      filter: drop-shadow(0px 0px 40px rgba(101, 123, 154, 0.1));
+    }
   }
 
   .info-card {
