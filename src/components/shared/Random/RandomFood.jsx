@@ -33,7 +33,11 @@ function RandomFood() {
     }
   }, [randomId])
 
-  if (localId === "") {
+  console.log({ localId })
+  console.log("localId oposite", !localId)
+  console.log("localId empty string", localId === "")
+  console.log("localId null", localId === null)
+  if (!localId) {
     return <div className="loader"></div>
   }
 
