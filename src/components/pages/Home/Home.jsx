@@ -8,21 +8,23 @@ import Header from "../../shared/Header/Header"
 
 function Home() {
   return (
-    <div className="home-container">
+    <>
       <Header/>
-      <RandomFood />
-      <FilterList
-        title="strArea"
-        api={areaFilterApi}
-        filterTitle={"Areas"}
-      />
-      <FilterList
-        title="strCategory"
-        api={"https://www.themealdb.com/api/json/v1/1/categories.php"}
-        filterTitle={"Categories"}
-      />
-      <Navbar />
-    </div>
+      <div className="home-container">
+        <RandomFood />
+        <FilterList
+          title="strArea"
+          api={areaFilterApi}
+          filterTitle={"Areas"}
+        />
+        <FilterList
+          title="strCategory"
+          api={"https://www.themealdb.com/api/json/v1/1/categories.php"}
+          filterTitle={"Categories"}
+        />
+        <Navbar />
+      </div>
+    </>
   )
 }
 

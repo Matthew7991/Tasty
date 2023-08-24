@@ -1,6 +1,5 @@
-
 .search-bar {
-  margin-top: 44px;
+  margin-top: 24px;
   margin-bottom: 10px;
 }
 
@@ -8,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 16px;
+  padding-bottom: 16px;
 
   h1 {
     font-size: 1.5rem;
@@ -25,4 +24,9 @@
 
 .back-button svg {
   height: 16px;
+  transition: transform 200ms ease-in-out;
+
+  &:hover{
+    transform: scale(1.2);
+  }
 }
