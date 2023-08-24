@@ -104,92 +104,16 @@ function Profile() {
         style={{ backgroundColor: "#70B9BE" }}>
         <article className="profile-article">
           <h1 className="profile-header">My Account</h1>
-          {editUsername ? (
-            <div className="profile-section-edit">
-              <Input
-                imgUrl={UserImg}
-                labelText={"username"}
-                name={"username"}
-                placeholder={"Username"}
-                type={"text"}
-                onChange={handleInputUsername}
-                required={true}
-                defaultValue={currentUser.username}
-              />
-              <button
-                className="profile-button"
-                onClick={handleEdit}>
-                Done
-              </button>
-            </div>
-          ) : (
-            <div className="profile-section">
-              <div className="profile-section-info">
-                <p className="profile-title">Display Name</p>
-                <p>{currentUser.username}</p>
-              </div>
-              {editEmail || editPassword || (
-                <button
-                  className="profile-button"
-                  onClick={() => setEditUsername(true)}>
-                  Edit
-                </button>
-              )}
-            </div>
-          )}
-          {editEmail ? (
-            <div className="profile-section-edit">
-              <Input
-                imgUrl={MailImg}
-                labelText={"email"}
-                name={"email"}
-                placeholder={"Email"}
-                type={"email"}
-                onChange={handleInputEmail}
-                required={true}
-                defaultValue={currentUser.email}
-              />
-              <button
-                className="profile-button"
-                onClick={handleEdit}>
-                Done
-              </button>
-            </div>
-          ) : (
-            <div className="profile-section">
-              <div className="profile-section-info">
-                <p className="profile-title">Email</p>
-                <p>{currentUser.email}</p>
-              </div>
-              {editPassword || editUsername || (
-                <button
-                  className="profile-button"
-                  onClick={() => setEditEmail(true)}>
-                  Edit
-                </button>
-              )}
-            </div>
-          )}
-          {editPassword ? (
-            <>
+          <div className="profile-sections-wrapper">
+            {editUsername ? (
               <div className="profile-section-edit">
                 <Input
-                  imgUrl={LockImg}
-                  labelText={"password"}
-                  name={"password"}
-                  placeholder={"Password"}
-                  type={"password"}
-                  onChange={handleInputPassword}
-                  required={true}
-                  defaultValue={currentUser.password}
-                />
-                <Input
-                  imgUrl={LockImg}
-                  labelText={"password"}
-                  name={"password-confirm"}
-                  placeholder={"Repeat password"}
-                  type={"password"}
-                  onChange={handleInputPasswordConfirm}
+                  imgUrl={UserImg}
+                  labelText={"username"}
+                  name={"username"}
+                  placeholder={"Username"}
+                  type={"text"}
+                  onChange={handleInputUsername}
                   required={true}
                   defaultValue={currentUser.username}
                 />
@@ -199,22 +123,101 @@ function Profile() {
                   Done
                 </button>
               </div>
-            </>
-          ) : (
-            <div className="profile-section">
-              <div className="profile-section-info">
-                <p className="profile-title">Password</p>
-                <p>{currentUser.password.replaceAll(/./g, "*")}</p>
+            ) : (
+              <div className="profile-section">
+                <div className="profile-section-info">
+                  <p className="profile-title">Display Name</p>
+                  <p>{currentUser.username}</p>
+                </div>
+                {editEmail || editPassword || (
+                  <button
+                    className="profile-button"
+                    onClick={() => setEditUsername(true)}>
+                    Edit
+                  </button>
+                )}
               </div>
-              {editEmail || editUsername || (
+            )}
+            {editEmail ? (
+              <div className="profile-section-edit">
+                <Input
+                  imgUrl={MailImg}
+                  labelText={"email"}
+                  name={"email"}
+                  placeholder={"Email"}
+                  type={"email"}
+                  onChange={handleInputEmail}
+                  required={true}
+                  defaultValue={currentUser.email}
+                />
                 <button
                   className="profile-button"
-                  onClick={() => setEditPassword(true)}>
-                  Edit
+                  onClick={handleEdit}>
+                  Done
                 </button>
-              )}
-            </div>
-          )}
+              </div>
+            ) : (
+              <div className="profile-section">
+                <div className="profile-section-info">
+                  <p className="profile-title">Email</p>
+                  <p>{currentUser.email}</p>
+                </div>
+                {editPassword || editUsername || (
+                  <button
+                    className="profile-button"
+                    onClick={() => setEditEmail(true)}>
+                    Edit
+                  </button>
+                )}
+              </div>
+            )}
+            {editPassword ? (
+              <>
+                <div className="profile-section-edit">
+                  <Input
+                    imgUrl={LockImg}
+                    labelText={"password"}
+                    name={"password"}
+                    placeholder={"Password"}
+                    type={"password"}
+                    onChange={handleInputPassword}
+                    required={true}
+                    defaultValue={currentUser.password}
+                  />
+                  <Input
+                    imgUrl={LockImg}
+                    labelText={"password"}
+                    name={"password-confirm"}
+                    placeholder={"Repeat password"}
+                    type={"password"}
+                    onChange={handleInputPasswordConfirm}
+                    required={true}
+                    defaultValue={currentUser.username}
+                  />
+                  <button
+                    className="profile-button"
+                    onClick={handleEdit}>
+                    Done
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="profile-section">
+                <div className="profile-section-info">
+                  <p className="profile-title">Password</p>
+                  <p>{currentUser.password.replaceAll(/./g, "*")}</p>
+                </div>
+                {editEmail || editUsername || (
+                  <button
+                    className="profile-button"
+                    onClick={() => setEditPassword(true)}>
+                    Edit
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+
           {displayError && <output>User already exists</output>}
           {passwordNotSame && <output>Passwords don't match</output>}
           <button

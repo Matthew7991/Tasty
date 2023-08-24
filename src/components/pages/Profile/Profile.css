@@ -16,11 +16,19 @@
   max-width: 500px;
 }
 
+.profile-sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #c6e3e5;
+  padding: 8px;
+  border-radius: 8px;
+}
+
 .profile-section {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 16px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -83,7 +91,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 16px;
   display: block;
   margin-inline: auto;
 }
