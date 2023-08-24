@@ -28,12 +28,14 @@ function SearchItem() {
   }
 
   return (
-    <div className='areas'>
+    <>
       <Header/>
-      <SearchBar onHandleSerachInput={handleSerachInput}/>
-      {serachInput && foodList ? <FoodList foodList={foodList} /> : <h2>No Result</h2>}
-      <Navbar/>
-    </div>
+      <div className='areas'>
+        <SearchBar onHandleSerachInput={handleSerachInput}/>
+        {serachInput && foodList ? <FoodList foodList={foodList} /> : <h2 className='no-result'>No Result</h2>}
+        <Navbar/>
+      </div>
+    </>
   )
 }
 
