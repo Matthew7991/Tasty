@@ -20,12 +20,15 @@ function RandomFood() {
   }, [])
 
   useEffect(() => {
+    console.log({ randomId })
     if (randomId) {
-      if (localId === "") {
-        localStorage.setItem(`${now}`, JSON.stringify(randomId))
+      console.log({ localId })
+      console.log("localId null?", localId === null)
+      if (localId === null) {
         setLocaleId(randomId)
+        localStorage.setItem(`${now}`, randomId)
       } else {
-        setLocaleId(JSON.parse(localStorage.getItem(`${now}`)))
+        setLocaleId(localStorage.getItem(`${now}`))
       }
     }
   }, [randomId])
