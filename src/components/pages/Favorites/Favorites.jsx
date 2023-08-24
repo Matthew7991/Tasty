@@ -28,8 +28,8 @@ function Favorites() {
 
   return (
     <>
+      <Header />
       <main className="favorites">
-        <Header />
         <h1>{currentUser.username}'s favorites</h1>
         {currentUser.favorites.length > 0 ? (
           <FoodList foodList={currentUser.favorites} />
