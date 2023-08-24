@@ -4,6 +4,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 24px;
+}
+
+.login-main {
+  width: 100%;
+  max-width: 500px;
 }
 
 .login-article {
@@ -20,15 +26,14 @@
 }
 
 .login-header {
-  color: #70B9BE;
+  color: #70b9be;
   font-size: 24px;
   margin-bottom: 15px;
   text-align: center;
 }
 
-
 .login-button {
-  background-color: #70B9BE;
+  background-color: #70b9be;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -39,4 +44,3 @@
 .register-link {
   margin-top: 15px;
 }
-

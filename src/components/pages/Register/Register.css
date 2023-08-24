@@ -4,6 +4,12 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 24px;
+}
+
+.register-main {
+  width: 100%;
+  max-width: 500px;
 }
 
 .register-article {
@@ -20,7 +26,7 @@
 }
 
 .register-header {
-  color: #70B9BE;
+  color: #70b9be;
   font-size: 24px;
   margin-bottom: 15px;
   text-align: center;
@@ -28,7 +34,7 @@
 
 .input-container {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
 }
 
 .input-label {
@@ -43,14 +49,13 @@
 
 .input-field {
   padding: 10px;
-  border: 1px solid #70B9BE;
+  border: 1px solid #70b9be;
   border-radius: 5px;
   width: 100%;
 }
 
-
 .register-button {
-  background-color: #70B9BE;
+  background-color: #70b9be;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -61,4 +66,3 @@
 .login-link {
   margin-top: 15px;
 }
-

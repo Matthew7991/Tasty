@@ -99,11 +99,13 @@ function Profile() {
 
   return (
     <>
-      <main className="profile-container">
+      <main
+        className="profile-container"
+        style={{ backgroundColor: "#70B9BE" }}>
         <article className="profile-article">
           <h1 className="profile-header">My Account</h1>
           {editUsername ? (
-            <div className="profile-section">
+            <div className="profile-section-edit">
               <Input
                 imgUrl={UserImg}
                 labelText={"username"}
@@ -122,19 +124,21 @@ function Profile() {
             </div>
           ) : (
             <div className="profile-section">
-              <div className="profile-section">
-                <p>Display Name</p>
+              <div className="profile-section-info">
+                <p className="profile-title">Display Name</p>
                 <p>{currentUser.username}</p>
               </div>
-              <button
-                className="profile-button"
-                onClick={() => setEditUsername(true)}>
-                Edit
-              </button>
+              {editEmail || editPassword || (
+                <button
+                  className="profile-button"
+                  onClick={() => setEditUsername(true)}>
+                  Edit
+                </button>
+              )}
             </div>
           )}
           {editEmail ? (
-            <div className="profile-section">
+            <div className="profile-section-edit">
               <Input
                 imgUrl={MailImg}
                 labelText={"email"}
@@ -153,20 +157,22 @@ function Profile() {
             </div>
           ) : (
             <div className="profile-section">
-              <div className="profile-section">
-                <p>Email</p>
+              <div className="profile-section-info">
+                <p className="profile-title">Email</p>
                 <p>{currentUser.email}</p>
               </div>
-              <button
-                className="profile-button"
-                onClick={() => setEditEmail(true)}>
-                Edit
-              </button>
+              {editPassword || editUsername || (
+                <button
+                  className="profile-button"
+                  onClick={() => setEditEmail(true)}>
+                  Edit
+                </button>
+              )}
             </div>
           )}
           {editPassword ? (
             <>
-              <div className="profile-section">
+              <div className="profile-section-edit">
                 <Input
                   imgUrl={LockImg}
                   labelText={"password"}
@@ -196,15 +202,17 @@ function Profile() {
             </>
           ) : (
             <div className="profile-section">
-              <div className="profile-section">
-                <p>Password</p>
+              <div className="profile-section-info">
+                <p className="profile-title">Password</p>
                 <p>{currentUser.password.replaceAll(/./g, "*")}</p>
               </div>
-              <button
-                className="profile-button"
-                onClick={() => setEditPassword(true)}>
-                Edit
-              </button>
+              {editEmail || editUsername || (
+                <button
+                  className="profile-button"
+                  onClick={() => setEditPassword(true)}>
+                  Edit
+                </button>
+              )}
             </div>
           )}
           {displayError && <output>User already exists</output>}
