@@ -33,6 +33,15 @@
 
 .random-food-link:hover {
   background-color: #f5f5f5;
+  color: #0a2533;
+}
+
+.random-food-link:hover .random-food-name {
+  color: #0a2533;
+}
+.random-food-link:hover .random-food-category,
+.random-food-link:hover .random-food-area {
+  color: #000;
 }
 
 .random-food-details {
