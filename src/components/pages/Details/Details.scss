@@ -151,7 +151,6 @@
 @media (min-width: 700px) {
   .details {
     padding: 24px;
-    align-items: center;
     .img-wrapper-inner {
       img {
         border-radius: 32px;
@@ -161,15 +160,14 @@
     }
   }
 }
-@media (min-width: 1280px) {
-  .details {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-    .img-wrapper-inner {
-      img {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
+// @media (min-width: 1280px) {
+//   .details {
+//     // display: flex;
+//     gap: 24px;
+//     .img-wrapper-inner {
+//       img {
+//         margin-bottom: 0;
+//       }
+//     }
+//   }
+// }
