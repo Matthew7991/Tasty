@@ -20,7 +20,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: #c6e3e5;
+  /* background-color: #c6e3e5; */
+  box-shadow: 0 0 8px #c6e3e5;
   padding: 8px;
   border-radius: 8px;
 }
