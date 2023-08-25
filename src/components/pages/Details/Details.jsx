@@ -204,11 +204,13 @@ function Details() {
             <div className="instructions">
               <h2>Instructions</h2>
               <pre>{meal.strInstructions}</pre>
-              <a
-                href={meal.strYoutube}
-                target="_blank">
-                Video
-              </a>
+              {meal.strYoutube && (
+                <a
+                  href={meal.strYoutube}
+                  target="_blank">
+                  Video
+                </a>
+              )}
             </div>
           )}
         </div>
